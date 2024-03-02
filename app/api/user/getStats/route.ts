@@ -26,11 +26,14 @@ function parseText(text: string) {
 }
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-	const username = req.cookies.get("username");
+	const username = req.cookies.get("username")?.value;
+
 	const stats = await fetch(
 		`https://github-readme-stats.vercel.app/api?username=${username}`
 	);
+
 	const htmlData = await stats.text();
+	console.log(htmlData);
 	const data = parseText(htmlData);
 	return NextResponse.json(data, { status: 200 });
 };

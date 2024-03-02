@@ -11,7 +11,7 @@ export const fetcher = (...args) =>
 
 export function useGHStats(username: string) {
 	const { data, error, isLoading, mutate } = useSWR(
-		`/api/user/getStats?username=JeelRajodiya`,
+		`/api/user/getStats?username=${username}`,
 		fetcher
 	);
 
