@@ -1,7 +1,25 @@
 .main {
 	display: flex;
-	border: 1px solid black;
+	flex-direction: column;
 	border-radius: 10px;
-	width: 50%;
 	background: #001125;
+	padding: 20px;
+	gap: 10px;
+}
+
+.msg {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	gap: 10px;
+}
+
+.last {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	align-items: center;
+}
+.postBtn {
+	border-radius: 16px !important;
 }
