@@ -1,18 +1,21 @@
+'use client'
+
 import styles from "@/app/styles/page.module.css";
 import Navbar from "@/components/Navbar";
-import { authConfig } from "@/lib/Auth/auth";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-export default async function RootLayout({
+export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const session = await getServerSession(authConfig);
+	const session = useSession().data;
+	const router = useRouter();
 
 	if (!session) {
-		redirect("/LandingPage");
+		console.log(session);
+		router.push("/LandingPage");
 	}
 
 	return (

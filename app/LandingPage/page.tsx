@@ -1,15 +1,17 @@
+'use client'
+
 import LoginBtn from "@/components/LoginBtn";
 import Logo from "../../components/Logo";
 import styles from "./LandingPage.module.css";
-import {authConfig} from "@/lib/Auth/auth";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
-export default async function Home() {
-	const session = await getServerSession(authConfig);
+export default function Home() {
+	const session = useSession().data;
+	const router = useRouter();
 
 	if (session) {
-		redirect("/Dashboard");
+		router.push("/Dashboard");
 	}
 
 	return (

@@ -1,16 +1,17 @@
-import { authConfig } from "@/lib/Auth/auth";
+'use client'
+
 import Commits from "@/public/icons/Commits";
 import Issue from "@/public/icons/Issue";
 import PR from "@/public/icons/PR";
 import Repo from "@/public/icons/Repo";
 import Star from "@/public/icons/Star";
 import { Avatar } from "@chakra-ui/react";
-import { getServerSession } from "next-auth";
 import React from "react";
 import styles from "./ProfileCard.module.css";
+import { useSession } from "next-auth/react";
 
-async function ProfileCard() {
-	const session = await getServerSession(authConfig);
+function ProfileCard() {
+	const session = useSession().data;
 
 	const statistics = [
 		{ icon: <Star />, title: "Total Stars", number: 10 },

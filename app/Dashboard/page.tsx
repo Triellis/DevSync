@@ -3,7 +3,7 @@ import { Divider, Input } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Dashboard.module.css";
 
-async function page() {
+function page() {
 	return (
 		<div className={styles.main}>
 			<div className={styles.newPost}>
