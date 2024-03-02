@@ -2,6 +2,7 @@ import styles from "./styles/page.module.css";
 import Auth from "./components/Temp/Auth/Auth";
 import { authConfig } from "@/lib/Auth/auth";
 import { getServerSession } from 'next-auth';
+import SignoutBtn from "./components/Temp/SignoutBtn";
 
 export default async function Home() {
 
@@ -13,8 +14,7 @@ export default async function Home() {
 			{!session ? <Auth /> : (
 				<div>
 					<p>You are signed in as {session.user?.email}</p>
-					<p>Click <a href="/api/auth/signout">here</a> to sign out</p>
-
+					<SignoutBtn />
 					<h2>Hello, {session.user?.name}</h2>
 				</div>
 			)}

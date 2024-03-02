@@ -23,9 +23,27 @@ const Auth = () => {
         }
       };
 
+      const handleSignInGithub = async () => {
+        try {
+            
+            const res = await signIn('github', {
+                redirect: false,
+            });
+
+            if(res?.error) {
+                console.log(res.error);
+            }
+    
+        }
+        catch (err) {
+            console.log(err);
+        }
+      }
+
   return (
     <div>
       <Button colorScheme="blue" onClick={handleSignInGoogle}>Sign In</Button>
+      <Button colorScheme="blue" onClick={handleSignInGithub}>Sign In with Github</Button>
     </div>
   )
 }
