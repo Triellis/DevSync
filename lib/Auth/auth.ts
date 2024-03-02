@@ -33,6 +33,11 @@ export const authConfig: NextAuthOptions = {
 				if (githubInfo) {
 					await connectToDB();
 					console.log("object");
+					const userExists = await User.findOne({ email });
+
+					if (userExists) {
+						return true;
+					}
 
 					const user = new User({
 						name,
