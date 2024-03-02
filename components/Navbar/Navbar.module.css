@@ -3,4 +3,5 @@
 	border: 1px solid #858585;
 	background-color: #001125;
 	border-radius: 32px;
+	width: min-content;
 }

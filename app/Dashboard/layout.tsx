@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-import { Cabin } from "next/font/google";
-
+import styles from "@/app/styles/page.module.css";
 import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
@@ -10,8 +8,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<div>
-			<Navbar />
-			{children}
+			<div className={styles.nav}>
+				<Navbar />
+			</div>
+			<div>{children}</div>
 		</div>
 	);
 }
