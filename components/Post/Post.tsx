@@ -17,7 +17,7 @@ function Post({ content }: { content: string }) {
 							gap={"10px"}
 							fontWeight={"bold"}
 						>
-							<span>name</span>
+							<span>Utsav Raithatha</span>
 							<Bluetick />
 						</Flex>
 
@@ -26,7 +26,7 @@ function Post({ content }: { content: string }) {
 								color: "#536471",
 							}}
 						>
-							@ username
+							@ raithathautsav11
 						</span>
 					</div>
 				</div>
