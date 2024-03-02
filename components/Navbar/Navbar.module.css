@@ -1,7 +1,14 @@
 .main {
-	padding: 1em;
-	border: 1px solid #858585;
+	padding-inline: 15px;
+	padding-block: 10px;
+	border: 1px solid var(--borderCol);
 	background-color: #001125;
 	border-radius: 32px;
 	width: min-content;
+}
+
+.navLogo {
+	/* white border on the right side */
+	border-right: 2px solid white;
+	padding-inline: 10px;
 }
