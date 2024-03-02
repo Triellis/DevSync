@@ -5,12 +5,12 @@ import { useSession } from "next-auth/react";
 import React from "react";
 import styles from "./ProfilePic.module.css";
 
-function ProfilePic() {
+function ProfilePic({ sz }: { sz?: string }) {
 	const session = useSession().data;
 
 	return (
 		<Avatar
-			size="sm"
+			size={sz || "sm"}
 			src={session?.user?.image || ""}
 			className={styles.avatar}
 			onClick={() => console.log("clicked")}

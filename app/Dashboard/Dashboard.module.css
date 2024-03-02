@@ -1,10 +1,17 @@
 .main {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
 .newPost {
+	width: 70%;
+	padding: 10px;
+	margin: 10px;
+}
+
+.post {
 	width: 70%;
 	padding: 10px;
 	margin: 10px;
