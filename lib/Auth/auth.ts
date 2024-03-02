@@ -19,8 +19,6 @@ export const authConfig: NextAuthOptions = {
 
                 const githubInfo = await getGihubBasicInfo(userId);
 
-                console.log(githubInfo);
-
                 if(githubInfo){
                     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/user/adduser`, {
                         method: 'POST',
@@ -37,7 +35,6 @@ export const authConfig: NextAuthOptions = {
                         }),
                     });
                     const data = await res.json();
-                    console.log(data);
                     return true; // Return true to continue the sign-in process
                 } else {
                     return false; // Return false to stop the sign-in process

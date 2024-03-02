@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 export const POST = async (req: Request, res: Response) => {
     try {
     const { name, email,image, githubName, githubBio, githubBlog} = await req.json();
-    console.log(name, email, image, githubName, githubBio, githubBlog);
 
     await connectToDB();
 
@@ -16,7 +15,7 @@ export const POST = async (req: Request, res: Response) => {
     const userExists = await User.findOne({ email });
 
     if(userExists) {
-        return NextResponse.json({ message: "User already exists" }, { status: 400 });
+        return NextResponse.json({ message: "User already exists" }, { status: 200 });
     }
 
     const user = await User.create({
