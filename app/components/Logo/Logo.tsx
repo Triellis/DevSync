@@ -1,10 +1,10 @@
 import React from "react";
 
-function Logo() {
+function Logo({ fSize }: { fSize: string }) {
 	return (
 		<div
 			style={{
-				fontSize: "80px",
+				fontSize: `${fSize}`,
 			}}
 		>
 			<span>Dev</span>
