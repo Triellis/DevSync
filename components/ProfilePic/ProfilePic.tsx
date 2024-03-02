@@ -1,12 +1,17 @@
 import { Avatar } from "@chakra-ui/react";
 import React from "react";
 import styles from "./ProfilePic.module.css";
+import { authConfig } from "@/lib/Auth/auth";
+import { getServerSession } from "next-auth";
 
-function ProfilePic() {
+async function ProfilePic() {
+
+	const session = await getServerSession(authConfig);
+
 	return (
 		<Avatar
-			size="sm"
-			src="public/icons/metaicon.png"
+			size="md"
+			src={session?.user?.image || ""}
 			className={styles.avatar}
 		/>
 	);

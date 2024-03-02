@@ -1,6 +1,5 @@
 import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
-import { signIn } from "next-auth/react";
 import { getGihubBasicInfo } from "../function";
 
 export const authConfig: NextAuthOptions = {
