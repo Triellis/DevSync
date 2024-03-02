@@ -46,7 +46,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<a className={styles.second} href="/Profile">
+			<a className={styles.second} href="/Dashboard/Profile">
 				<ProfilePic />
 			</a>
 		</div>
