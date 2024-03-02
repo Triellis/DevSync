@@ -4,8 +4,8 @@ export const theme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: "var(--background)",
-				color: "var(--text)",
+				bg: "hsl(var(--background))",
+				color: "hsl(var(--text))",
 			},
 		},
 	},

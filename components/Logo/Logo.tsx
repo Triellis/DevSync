@@ -8,7 +8,7 @@ function Logo({ fSize }: { fSize: string }) {
 			}}
 		>
 			<span>Dev</span>
-			<span style={{ color: "var(--primary)" }}>Sync</span>
+			<span style={{ color: "hsl(var(--primary))" }}>Sync</span>
 		</div>
 	);
 }
