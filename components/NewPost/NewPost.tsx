@@ -12,10 +12,12 @@ function Post() {
 				<Input variant="unstyled" placeholder="Create new post" />
 			</div>
 
-			<Divider color={"#D6E8FF"} />
+			<Divider
+				borderWidth={"1px"}
+				borderColor={"rgba(214, 232, 255, 0.5)"}
+			/>
 
 			<div className={styles.last}>
-				{/* clipbtn */}
 				<IconButton
 					aria-label="clip"
 					icon={<Clip />}
