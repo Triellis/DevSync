@@ -5,3 +5,11 @@
 	--secondary: 264, 100%, 31%;
 	--accent: 274, 99%, 58%;
 }
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
