@@ -6,13 +6,18 @@
 }
 
 .newPost {
-	width: 70%;
+	width: 60%;
 	padding: 10px;
 	margin: 10px;
 }
 
 .post {
-	width: 70%;
+	width: 60%;
 	padding: 10px;
 	margin: 10px;
+	display: flex;
+	/* justify-content: center; */
+	/* align-items:  center; */
+	flex-direction: column;
+	gap: 16px;
 }

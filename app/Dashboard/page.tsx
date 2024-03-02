@@ -12,7 +12,30 @@ function page() {
 			</div>
 
 			<div className={styles.post}>
-				<Post content="I am just excited!" />
+				<Post
+					name={"Lee Robinson"}
+					username="Utsav19"
+					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					content="I am just excited!"
+				/>
+				<Post
+					name={"Utsav Raithatha"}
+					username="Utsav19"
+					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					content="I am just excited!"
+				/>
+				<Post
+					name={"Utsav Raithatha"}
+					username="Utsav19"
+					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					content="I am just excited!"
+				/>
+				<Post
+					name={"Utsav Raithatha"}
+					username="Utsav19"
+					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					content="I am just excited!"
+				/>
 			</div>
 		</div>
 	);

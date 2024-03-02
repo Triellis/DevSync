@@ -5,19 +5,29 @@ import React from "react";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import styles from "./Post.module.css";
 
-function Post({ content }: { content: string }) {
+function Post({
+	profilePicUrl,
+	name,
+	username,
+	content,
+}: {
+	profilePicUrl: string;
+	name: string;
+	username: string;
+	content: string;
+}) {
 	return (
 		<div className={styles.main}>
 			<div className={styles.me}>
 				<div className={styles.head}>
-					<ProfilePic sz="md" />
+					<ProfilePic sz="md" picUrl={profilePicUrl} />
 					<div className={styles.names}>
 						<Flex
 							direction={"row"}
 							gap={"10px"}
 							fontWeight={"bold"}
 						>
-							<span>Utsav Raithatha</span>
+							<span>{name}</span>
 							<Bluetick />
 						</Flex>
 
@@ -26,7 +36,7 @@ function Post({ content }: { content: string }) {
 								color: "#536471",
 							}}
 						>
-							@ raithathautsav11
+							@ {username}
 						</span>
 					</div>
 				</div>
