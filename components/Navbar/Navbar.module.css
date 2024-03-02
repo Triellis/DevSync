@@ -32,7 +32,7 @@
 
 .iconGrp {
 	display: flex;
-	j1ustify-content: space-between;
+	justify-content: space-between;
 	align-items: center;
 	padding-inline: 15px;
 	gap: 10px;
