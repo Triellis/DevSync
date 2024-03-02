@@ -39,8 +39,19 @@
 }
 
 .list {
+	margin-top: 10px;
+	border: 1px solid hsl(var(--primary), 0.53);
 	background-color: hsl(var(--background)) !important;
+	min-width: 30px !important;
+	padding: 1 !important;
 }
 .list > * {
 	background-color: hsl(var(--background)) !important;
+	padding: 0 !important;
+}
+
+.btn {
+	width: 100%;
+	background-color: hsl(var(--background)) !important;
+	color: white !important;
 }

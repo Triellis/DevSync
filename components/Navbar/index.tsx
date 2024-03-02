@@ -62,15 +62,18 @@ const Navbar = () => {
 
 			<Menu placement="bottom-end">
 				<MenuButton>{<ProfilePic />}</MenuButton>
-				<MenuList className={styles.list} width={"10px"}>
-					<MenuItem style={{ width: "10px" }}>
-						<Link
-							className={styles.second}
-							href="/Dashboard/Profile"
-						>
-							Profile
-						</Link>
+				<MenuList className={styles.list}>
+					<MenuItem>
+						<Button className={styles.btn}>
+							<Link
+								className={styles.second}
+								href="/Dashboard/Profile"
+							>
+								Profile
+							</Link>
+						</Button>
 					</MenuItem>
+
 					<MenuItem
 						style={{ width: "10px" }}
 						onClick={() => {
