@@ -25,22 +25,24 @@ const icons = [
 const Navbar = () => {
 	return (
 		<div className={styles.main}>
-			<div className={styles.navLogo}>
-				<a href="/home" className={styles.navLogo}>
-					<Logo fSize="16px" />
-				</a>
-			</div>
+			<div className={styles.first}>
+				<div className={styles.navLogo}>
+					<a href="/home">
+						<Logo fSize="18px" />
+					</a>
+				</div>
 
-			<div className={styles.iconGrp}>
-				{icons.map((item, index) => (
-					<IconButton
-						key={index}
-						icon={item.icon}
-						aria-label="icon"
-						bg="transparent"
-						_hover={{ bg: "transparent" }}
-					/>
-				))}
+				<div className={styles.iconGrp}>
+					{icons.map((item, index) => (
+						<IconButton
+							key={index}
+							icon={item.icon}
+							aria-label="icon"
+							bg="transparent"
+							_hover={{ bg: "transparent" }}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);
