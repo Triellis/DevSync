@@ -6,16 +6,15 @@ import PR from "@/public/icons/PR";
 import Repo from "@/public/icons/Repo";
 import Star from "@/public/icons/Star";
 import { Avatar } from "@chakra-ui/react";
-import React from "react";
-import styles from "./ProfileCard.module.css";
 import { useSession } from "next-auth/react";
-import { useCookies } from 'next-client-cookies';
-import { useEffect, useState } from "react";
+import { useCookies } from "next-client-cookies";
+import React, { useEffect, useState } from "react";
+import styles from "./ProfileCard.module.css";
 
 function ProfileCard() {
 	const session = useSession().data;
 	const cookies = useCookies();
-	const username = cookies?.get('username');
+	const username = cookies?.get("username");
 
 	const [stats, setStats] = useState({
 		stars: 0,
@@ -35,7 +34,13 @@ function ProfileCard() {
 
 	return (
 		<div className={styles.main}>
-			<Avatar size="2xl" name="name" src={session?.user?.image || ""} />
+			<Avatar
+				size={"2xl"}
+				name="name"
+				borderColor={"hsl(var(--primary))"}
+				borderWidth={"2px"}
+				src={session?.user?.image || ""}
+			/>
 			<div>
 				<span className={styles.name}>{username}</span>
 				<div className={styles.stats}>
