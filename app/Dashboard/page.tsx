@@ -12,7 +12,7 @@ function page() {
 			</div>
 
 			<div className={styles.post}>
-				<Post />
+				<Post content="I am just excited!" />
 			</div>
 		</div>
 	);
