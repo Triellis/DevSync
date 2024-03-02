@@ -1,10 +1,20 @@
+"use client";
 import Logo from "@/components/Logo";
 import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
-import { Avatar, IconButton } from "@chakra-ui/react";
+import {
+	Avatar,
+	Button,
+	IconButton,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
+} from "@chakra-ui/react";
 import React from "react";
+import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
 
 const icons = [
