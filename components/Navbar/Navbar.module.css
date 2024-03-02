@@ -43,14 +43,14 @@
 	border: 1px solid hsl(var(--primary), 0.53);
 	background-color: hsl(var(--background)) !important;
 	min-width: 30px !important;
-	padding: 1 !important;
+	padding: 10px !important;
+	border-radius: 15px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 5px !important;
 }
+
 .list > * {
 	background-color: hsl(var(--background)) !important;
 	padding: 0 !important;
-}
-
-.item {
-	padding-inline: 10px !important;
-	padding-block: 5px !important;
 }

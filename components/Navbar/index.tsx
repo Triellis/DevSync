@@ -64,22 +64,45 @@ const Navbar = () => {
 				<MenuButton>{<ProfilePic />}</MenuButton>
 				<MenuList className={styles.list}>
 					<MenuItem className={styles.item}>
-						<Link
-							className={styles.second}
-							href="/Dashboard/Profile"
+						<Button
+							style={{
+								width: "100%",
+								backgroundColor: "hsl(var(--primary))",
+							}}
+							_hover={{
+								bg: "hsl(var(--secondary))",
+								color: "white",
+							}}
+							className={styles.btn}
 						>
-							Profile
-						</Link>
+							<Link
+								className={styles.second}
+								href="/Dashboard/Profile"
+							>
+								Profile
+							</Link>
+						</Button>
 					</MenuItem>
 
 					<MenuItem
 						className={styles.item}
-						style={{ width: "10px" }}
 						onClick={() => {
 							signOut({ callbackUrl: "/LandingPage" });
 						}}
 					>
-						Logout
+						<Button
+							className={styles.btn}
+							style={{
+								width: "100%",
+								backgroundColor: "red.500",
+							}}
+							_hover={{
+								bg: "red.500",
+								color: "red.700",
+							}}
+						>
+							Logout
+						</Button>
 					</MenuItem>
 				</MenuList>
 			</Menu>
