@@ -34,7 +34,6 @@ export const authConfig: NextAuthOptions = {
                             githubBlog: githubInfo?.githubBlog,
                         }),
                     });
-                    const data = await res.json();
                     return true; // Return true to continue the sign-in process
                 } else {
                     return false; // Return false to stop the sign-in process

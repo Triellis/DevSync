@@ -1,4 +1,4 @@
-import { connectToDB } from "@/lib/DB";
+import connectToDB from "@/lib/DB";
 import User from "@/lib/Schemas/User";
 import { NextResponse } from "next/server";
 
@@ -31,18 +31,5 @@ export const POST = async (req: Request, res: Response) => {
     }
     catch(err) {
         return NextResponse.json({ message: "Error creating user", err }, { status: 500 });
-    }
-}
-
-export const DELETE = async (req: Request, res: Response) => {
-    try {
-        await connectToDB();
-
-        const deleteAll = await User.deleteMany({});
-
-        return NextResponse.json({ message: "User deleted" }, { status: 200 });
-    }
-    catch(err) {
-        return NextResponse.json({ message: "Error deleting user", err }, { status: 500 });
     }
 }

@@ -1,24 +1,42 @@
 import mongoose from "mongoose";
-
-let isConnected: boolean = false;
-
-export const connectToDB = async () => {
-    mongoose.set("strictQuery", true);
-
-    if(!process.env.MONGO_URI) {
-        return console.log("DB URI not found");
-    }
-
-    if(isConnected) {
-        return console.log("DB is already connected");
-    }
-
-    try{
-        await mongoose.connect(process.env.MONGO_URI || '');
-        isConnected = true;
-        console.log("DB connected");
-    }
-    catch(err) {
-        console.log(err);
-    }
+declare global {
+  var mongoose: any; // This must be a `var` and not a `let / const`
 }
+
+const MONGO_URI = process.env.MONGO_URI!;
+
+if (!MONGO_URI) {
+  throw new Error(
+    "Please define the MONGO_URI environment variable inside .env.local",
+  );
+}
+
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+async function connectToDB() {
+  if (cached.conn) {
+    return cached.conn;
+  }
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+    cached.promise = mongoose.connect(MONGO_URI, opts).then((mongoose) => {
+      return mongoose;
+    });
+  }
+  try {
+    cached.conn = await cached.promise;
+  } catch (e) {
+    cached.promise = null;
+    throw e;
+  }
+
+  return cached.conn;
+}
+
+export default connectToDB;

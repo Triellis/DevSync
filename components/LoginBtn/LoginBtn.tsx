@@ -1,18 +1,13 @@
 "use client";
 
 import Gh from "@/public/icons/Gh";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import styles from "./LoginBtn.module.css";
 
 function LoginBtn() {
 	const router = useRouter();
-	const { data: session } = useSession();
-
-	if (session) {
-		router.push("/Dashboard");
-	}
 
 	const handleLogin = async () => {
 		try {
