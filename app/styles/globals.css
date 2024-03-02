@@ -1,9 +1,7 @@
 :root {
-	--text: #d6e8ff;
-	--background: #000c1a;
-	--primary: #75afff;
-	--secondary: #3f009e;
-	--accent: #a22afe;
-	--radius: 20px;
-	-bordercol: #2b6cb0;
+	--text: hsl(214, 100%, 92%);
+	--background: hsl(212, 100%, 5%);
+	--primary: hsl(215, 100%, 73%);
+	--secondary: hsl(264, 100%, 31%);
+	--accent: hsl(274, 99%, 58%);
 }

@@ -10,7 +10,7 @@ async function ProfilePic() {
 
 	return (
 		<Avatar
-			size="md"
+			size="sm"
 			src={session?.user?.image || ""}
 			className={styles.avatar}
 		/>
