@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/page";
-import { Providers } from "./providers";
+
+import Navbar from "../components/Navbar";
+
 import "./styles/globals.css";
 import styles from "./styles/page.module.css";
-
 
 const font = Cabin({ subsets: ["latin"] });
 
@@ -29,16 +28,5 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body className={font.className}>
-				<Providers>
-					
-					<div className={styles.children}>{children}</div>
-
-					{/* <Footer /> */}
-				</Providers>
-			</body>
-		</html>
-	);
+	return <div className={styles.children}>{children}</div>;
 }
