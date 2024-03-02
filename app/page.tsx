@@ -1,9 +1,8 @@
-import { authConfig } from "@/lib/Auth/auth";
-import { getServerSession } from "next-auth";
+import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
-export default async function Home() {
-	const session = await getServerSession(authConfig);
+export default function Home() {
+	const session = useSession().data;
 
 	if (session) {
 		redirect("/Dashboard");

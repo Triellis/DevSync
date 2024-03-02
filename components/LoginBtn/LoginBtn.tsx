@@ -2,13 +2,11 @@
 
 import Gh from "@/public/icons/Gh";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import React from "react";
 import styles from "./LoginBtn.module.css";
 
 function LoginBtn() {
-	const router = useRouter();
-
 	const handleLogin = async () => {
 		try {
 			const res = await signIn("github", {
@@ -16,7 +14,7 @@ function LoginBtn() {
 			});
 
 			if (res && !res.error) {
-				router.push("/Dashboard");
+				redirect("/Dashboard");
 			}
 
 			if (res?.error) {
