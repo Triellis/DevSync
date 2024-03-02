@@ -13,7 +13,6 @@ function ProfilePic({ sz }: { sz?: string }) {
 			size={sz || "sm"}
 			src={session?.user?.image || ""}
 			className={styles.avatar}
-			onClick={() => console.log("clicked")}
 		/>
 	);
 }

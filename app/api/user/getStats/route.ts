@@ -15,7 +15,6 @@ function parseText(text: string) {
 		'[data-testid="contribs"]'
 	)!.innerHTML;
 
-	console.log(issues, prs, stars, commits, contribs);
 	return {
 		issues,
 		prs,
