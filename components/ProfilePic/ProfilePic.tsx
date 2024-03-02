@@ -1,12 +1,11 @@
 import { authConfig } from "@/lib/Auth/auth";
 import { Avatar } from "@chakra-ui/react";
-
+import { getServerSession } from "next-auth";
 import React from "react";
 import styles from "./ProfilePic.module.css";
-import { useSession } from "next-auth/react";
 
-function ProfilePic() {
-	const session = useSession().data;
+async function ProfilePic() {
+	const session = await getServerSession(authConfig);
 
 	return (
 		<Avatar
