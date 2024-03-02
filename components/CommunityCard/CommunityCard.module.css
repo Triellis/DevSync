@@ -7,6 +7,7 @@
 	flex-direction: column;
 	padding-inline: 30px;
 	padding-block: 20px;
+	border: 1px solid #718096;
 }
 
 .info {
