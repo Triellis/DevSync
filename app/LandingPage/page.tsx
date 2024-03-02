@@ -1,9 +1,8 @@
 import { authConfig } from "@/lib/Auth/auth";
 import { getServerSession } from "next-auth";
-import LoginBtn from "./components/LoginBtn/LoginBtn";
-import Auth from "./components/Temp/Auth/Auth";
-import SignoutBtn from "./components/Temp/SignoutBtn";
-import styles from "./styles/page.module.css";
+import LoginBtn from "../components/LoginBtn";
+import SignoutBtn from "../components/Temp/SignoutBtn";
+import styles from "./LandingPage.module.css";
 
 export default async function Home() {
 	const session = await getServerSession(authConfig);
