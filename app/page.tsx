@@ -2,9 +2,9 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function Home() {
-	const session = useSession().data;
+	const { data: session, status } = useSession();
 
-	if (session) {
+	if (session.status == "authenticated") {
 		redirect("/Dashboard");
 	}
 	redirect("/LandingPage");

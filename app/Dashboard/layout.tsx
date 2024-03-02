@@ -4,16 +4,16 @@ import styles from "@/app/styles/page.module.css";
 import Navbar from "@/components/Navbar";
 import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const session = useSession().data;
+	const { data: session, status } = useSession();
 	// const router = useRouter();
-
-	if (!session) {
+	if (status === "unauthenticated") {
 		redirect("/LandingPage");
 	}
 
