@@ -40,7 +40,7 @@ function ProfileCard() {
 				src={session?.user?.image || ""}
 			/>
 			<div>
-				<span className={styles.name}>{username}</span>
+				<span className={styles.name}>{username} </span>
 				<div className={styles.stats}>
 					{statistics.map((stat, i) => (
 						<div key={i} className={styles.stat}>
