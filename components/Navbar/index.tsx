@@ -5,6 +5,7 @@ import People from "@/public/icons/People";
 import { Avatar, IconButton } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Navbar.module.css";
+import ProfilePic from "@/components/ProfilePic/ProfilePic";
 
 const icons = [
 	{
@@ -46,7 +47,7 @@ const Navbar = () => {
 			</div>
 
 			<div className={styles.second}>
-				<Avatar size="sm" src="public/icons/metaicon.png" className={styles.avatar} />
+				<ProfilePic />
 			</div>
 		</div>
 	);

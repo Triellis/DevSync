@@ -1,0 +1,7 @@
+.main {
+	display: flex;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 50%;
+	background: #001125;
+}
