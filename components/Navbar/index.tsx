@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
+import { signOut } from "next-auth/react";
 
 const icons = [
 	{
@@ -70,7 +71,14 @@ const Navbar = () => {
 							Profile
 						</Link>
 					</MenuItem>
-					<MenuItem style={{ width: "10px" }}>Logout</MenuItem>
+					<MenuItem
+						style={{ width: "10px" }}
+						onClick={() => {
+							signOut({ callbackUrl: "/LandingPage" });
+						}}
+					>
+						Logout
+					</MenuItem>
 				</MenuList>
 			</Menu>
 		</div>
