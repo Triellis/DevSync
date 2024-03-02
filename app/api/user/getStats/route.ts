@@ -26,7 +26,7 @@ function parseText(text: string) {
 }
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-	const username = req.nextUrl.searchParams.get("username");
+	const username = req.cookies.get("username");
 	const stats = await fetch(
 		`https://github-readme-stats.vercel.app/api?username=${username}`
 	);
