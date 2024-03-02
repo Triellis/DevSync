@@ -1,11 +1,10 @@
-import { authConfig } from "@/lib/Auth/auth";
-import { getServerSession } from "next-auth";
+import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
-export default async function Home() {
-	const session = await getServerSession(authConfig);
+export default function Home() {
+	const { data: session, status } = useSession();
 
-	if (session) {
+	if (status == "authenticated") {
 		redirect("/Dashboard");
 	}
 	redirect("/LandingPage");

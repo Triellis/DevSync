@@ -17,6 +17,7 @@ import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const icons = [
 	{
@@ -34,6 +35,7 @@ const icons = [
 ];
 
 const Navbar = () => {
+	const router = useRouter();
 	return (
 		<div className={styles.main}>
 			<div className={styles.first}>
@@ -51,7 +53,7 @@ const Navbar = () => {
 							aria-label="icon"
 							bg="transparent"
 							_hover={{ bg: "transparent" }}
-							onClick={()=> console.log("clicked")}
+							onClick={() => router.push(item.link)}
 						/>
 					))}
 				</div>

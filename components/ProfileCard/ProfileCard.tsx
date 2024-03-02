@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Commits from "@/public/icons/Commits";
 import Issue from "@/public/icons/Issue";
@@ -41,7 +41,7 @@ function ProfileCard() {
 				<div className={styles.stats}>
 					{statistics.map((stat, i) => (
 						<div key={i} className={styles.stat}>
-						<div>{stat.icon}</div>
+							<div>{stat.icon}</div>
 							<span className={styles.title}>
 								{stat.title} :{" "}
 							</span>

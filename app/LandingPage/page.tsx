@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
 import LoginBtn from "@/components/LoginBtn";
 import Logo from "../../components/Logo";
 import styles from "./LandingPage.module.css";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
-	const session = useSession().data;
+	const { data: session, status } = useSession();
 
-	if (session) {
+	if (status == "authenticated") {
 		redirect("/Dashboard");
 	}
 
