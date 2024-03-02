@@ -1,11 +1,11 @@
 import Logo from "@/components/Logo";
+import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
 import { Avatar, IconButton } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Navbar.module.css";
-import ProfilePic from "@/components/ProfilePic/ProfilePic";
 
 const icons = [
 	{
@@ -46,9 +46,9 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<div className={styles.second}>
+			<a className={styles.second} href="/Profile">
 				<ProfilePic />
-			</div>
+			</a>
 		</div>
 	);
 };
