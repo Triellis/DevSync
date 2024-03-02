@@ -29,6 +29,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: '',
     },
+    followers: {
+        type: [String],
+        default: [],
+    },
+    following: {
+        type: [String],
+        default: [],
+    },
 });
 
 export default mongoose.models.User || mongoose.model('User', userSchema, 'users');
