@@ -37,3 +37,10 @@
 	padding-inline: 15px;
 	gap: 10px;
 }
+
+.list {
+	background-color: hsl(var(--background)) !important;
+}
+.list > * {
+	background-color: hsl(var(--background)) !important;
+}
