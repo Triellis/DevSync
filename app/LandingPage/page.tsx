@@ -1,4 +1,5 @@
 import { authConfig } from "@/lib/Auth/auth";
+import Logo from "@/public/icons/Logo";
 import { getServerSession } from "next-auth";
 import LoginBtn from "../components/LoginBtn";
 import SignoutBtn from "../components/Temp/SignoutBtn";
@@ -9,9 +10,10 @@ export default async function Home() {
 
 	return (
 		<div className={styles.main}>
+			<Logo />
+
 			<h1 className={styles.title}>Sync In. Stand Out.</h1>
 			{!session ? (
-				// <Auth />
 				<LoginBtn />
 			) : (
 				<div>

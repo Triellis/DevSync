@@ -5,7 +5,8 @@
 	background-color: var(--primary);
 	border-radius: 20px;
 	font-size: 16px;
-	padding-block: 10px;
-	padding-inline: 20px;
+	padding-block: 20px;
+	padding-inline: 40px;
 	gap: 10px;
+	color: var(--background);
 }
