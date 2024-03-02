@@ -1,6 +1,6 @@
 .main {
 	padding-inline: 15px;
-	padding-block: 10px;
+	padding-block: 5px;
 	border: 1px solid var(--borderCol);
 	background-color: #001125;
 	border-radius: 32px;
@@ -11,12 +11,27 @@
 	align-items: center;
 }
 
+.first {
+	display: flex;
+	align-items: center;
+}
+
 .navLogo {
-	padding-inline: 10px;
+	display: flex;
+	align-items: center;
+	padding-inline: 15px;
+	border-right: 1px solid white;
+}
+
+.navLink {
+	margin-left: 10px;
+	color: white;
+	text-decoration: none;
 }
 
 .iconGrp {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-inline: 15px;
 }
