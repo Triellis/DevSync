@@ -13,11 +13,11 @@ import {
 	MenuItem,
 	MenuList,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const icons = [
 	{
@@ -59,9 +59,20 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<Link className={styles.second} href="/Dashboard/Profile">
-				<ProfilePic />
-			</Link>
+			<Menu placement="bottom-end">
+				<MenuButton>{<ProfilePic />}</MenuButton>
+				<MenuList className={styles.list} width={"10px"}>
+					<MenuItem style={{ width: "10px" }}>
+						<Link
+							className={styles.second}
+							href="/Dashboard/Profile"
+						>
+							Profile
+						</Link>
+					</MenuItem>
+					<MenuItem style={{ width: "10px" }}>Logout</MenuItem>
+				</MenuList>
+			</Menu>
 		</div>
 	);
 };

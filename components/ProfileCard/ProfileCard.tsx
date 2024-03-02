@@ -10,32 +10,30 @@ import { useSession } from "next-auth/react";
 import { useCookies } from "next-client-cookies";
 import React, { useEffect, useState } from "react";
 import styles from "./ProfileCard.module.css";
+import { useGHStats } from "@/lib/functions-clients";
 
 function ProfileCard() {
 	const session = useSession().data;
 	const cookies = useCookies();
-	const username = cookies?.get("username");
+	const username = cookies?.get("username")!;
 
-	const [stats, setStats] = useState({
-		stars: 0,
-		commits: 0,
-		prs: 0,
-		issues: 0,
-		repos: 0,
-	});
+	const { stats, isLoading, error, mutate } = useGHStats(username);
+	if (isLoading) return <div>Loading...</div>;
+	if (error) return <div>Error</div>;
 
 	const statistics = [
 		{ icon: <Star />, title: "Total Stars", number: stats.stars },
 		{ icon: <Commits />, title: "Total Commits", number: stats.commits },
 		{ icon: <PR />, title: "Total PRs", number: stats.prs },
 		{ icon: <Issue />, title: "Total Issues", number: stats.issues },
-		{ icon: <Repo />, title: "Number of Repos", number: stats.repos },
+		{ icon: <Repo />, title: "Number of Repos", number: stats.contribs },
 	];
 
 	return (
 		<div className={styles.main}>
 			<Avatar
-				size={"2xl"}
+				height={"200px"}
+				width={"200px"}
 				name="name"
 				borderColor={"hsl(var(--primary))"}
 				borderWidth={"2px"}
