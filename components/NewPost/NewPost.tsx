@@ -1,6 +1,6 @@
 import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Clip from "@/public/icons/Clip";
-import { Button, Divider, IconButton, Input } from "@chakra-ui/react";
+import { Button, Divider, IconButton, Input, Textarea } from "@chakra-ui/react";
 import React from "react";
 import styles from "./NewPost.module.css";
 
@@ -9,7 +9,11 @@ function Post() {
 		<div className={styles.main}>
 			<div className={styles.msg}>
 				<ProfilePic />
-				<Input variant="unstyled" placeholder="Create new post" />
+				<Textarea
+					rows={2}
+					variant="unstyled"
+					placeholder="Create new post"
+				/>
 			</div>
 
 			<Divider
