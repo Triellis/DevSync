@@ -9,7 +9,7 @@ function CommunityCard({ desc, pic }: { desc: string; pic: string }) {
 				<div>
 					<Avatar size="md" name="Community Name" src={pic} />
 				</div>
-				<div className={styles.name}>Name</div>
+				<div className={styles.name}>JSON-Schema</div>
 			</div>
 			<span className={styles.followers}>369 followers</span>
 
