@@ -1,6 +1,6 @@
 import NewPost from "@/components/NewPost";
 import Post from "@/components/Post/Post";
-import { Divider, Input } from "@chakra-ui/react";
+
 import React from "react";
 import styles from "./Dashboard.module.css";
 

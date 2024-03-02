@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import { RepositoryStats } from "./types";
 
 // @ts-ignore
 export const fetcher = (...args) =>
@@ -14,7 +15,7 @@ export function useUserSearch(username: string) {
 		fetcher
 	);
 	return {
-		users: data as ReceivedUserDataOnClient[],
+		users: data as RepositoryStats,
 		isLoading,
 		error: error,
 		mutate,

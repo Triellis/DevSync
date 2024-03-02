@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import jsdom from "jsdom";
+import { RepositoryStats } from "@/lib/types";
 function parseText(text: string) {
-	const data = {};
 	const dom = new jsdom.JSDOM(text);
 	const { document } = dom.window;
 
@@ -22,7 +22,7 @@ function parseText(text: string) {
 		stars,
 		commits,
 		contribs,
-	};
+	} as RepositoryStats;
 }
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
