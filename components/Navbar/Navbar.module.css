@@ -1,7 +1,6 @@
 .main {
 	padding-inline: 15px;
 	padding-block: 5px;
-	border: 1px solid var(--borderCol);
 	background-color: #001125;
 	border-radius: 32px;
 	width: min-content;
@@ -9,6 +8,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width: 60%;
 }
 
 .first {
@@ -20,7 +20,7 @@
 	display: flex;
 	align-items: center;
 	padding-inline: 15px;
-	border-right: 1px solid white;
+	border-right: 2px solid white;
 }
 
 .navLink {
@@ -34,4 +34,9 @@
 	justify-content: space-between;
 	align-items: center;
 	padding-inline: 15px;
+	gap: 10px;
+}
+
+.avatar {
+	border: 2px solid #2b6cb0;
 }

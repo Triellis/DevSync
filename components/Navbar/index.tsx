@@ -2,7 +2,7 @@ import Logo from "@/components/Logo";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
-import { IconButton } from "@chakra-ui/react";
+import { Avatar, IconButton } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Navbar.module.css";
 
@@ -43,6 +43,10 @@ const Navbar = () => {
 						/>
 					))}
 				</div>
+			</div>
+
+			<div className={styles.second}>
+				<Avatar size="sm" src="public/icons/metaicon.png" className={styles.avatar} />
 			</div>
 		</div>
 	);
