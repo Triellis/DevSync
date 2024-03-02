@@ -33,7 +33,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
 	);
 
 	const htmlData = await stats.text();
-	console.log(htmlData);
+
 	const data = parseText(htmlData);
 	return NextResponse.json(data, { status: 200 });
 };
