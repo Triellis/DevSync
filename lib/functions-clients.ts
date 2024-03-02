@@ -9,13 +9,14 @@ export const fetcher = (...args) =>
 		.then((res) => res.json())
 		.catch((err) => console.error(err));
 
-export function useUserSearch(username: string) {
+export function useGHStats(username: string) {
 	const { data, error, isLoading, mutate } = useSWR(
-		`/api/user/getStats?username=${username}`,
+		`/api/user/getStats?username=JeelRajodiya`,
 		fetcher
 	);
+
 	return {
-		users: data as RepositoryStats,
+		stats: data as RepositoryStats,
 		isLoading,
 		error: error,
 		mutate,
