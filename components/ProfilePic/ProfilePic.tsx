@@ -4,12 +4,12 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import styles from "./ProfilePic.module.css";
 
-async function ProfilePic() {
+async function ProfilePic({ sz }: { sz?: string }) {
 	const session = await getServerSession(authConfig);
 
 	return (
 		<Avatar
-			size="sm"
+			size={sz || "sm"}
 			src={session?.user?.image || ""}
 			className={styles.avatar}
 		/>

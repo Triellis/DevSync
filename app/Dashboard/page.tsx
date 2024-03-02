@@ -11,7 +11,7 @@ async function page() {
 				<NewPost />
 			</div>
 
-			<div>
+			<div className={styles.post}>
 				<Post />
 			</div>
 		</div>
