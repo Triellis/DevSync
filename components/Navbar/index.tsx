@@ -69,10 +69,6 @@ const Navbar = () => {
 								width: "100%",
 								backgroundColor: "hsl(var(--primary))",
 							}}
-							_hover={{
-								bg: "hsl(var(--secondary))",
-								color: "white",
-							}}
 							className={styles.btn}
 						>
 							<Link
@@ -91,14 +87,12 @@ const Navbar = () => {
 						}}
 					>
 						<Button
-							className={styles.btn}
+							bg={"red.400"}
 							style={{
 								width: "100%",
-								backgroundColor: "red.500",
 							}}
 							_hover={{
-								bg: "red.500",
-								color: "red.700",
+								bg: "red.600",
 							}}
 						>
 							Logout
