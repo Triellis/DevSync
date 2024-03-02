@@ -1,23 +1,26 @@
 import Logo from "@/components/Logo";
+import Chat from "@/public/icons/Chat";
+import Home from "@/public/icons/Home";
+import People from "@/public/icons/People";
 import { Center, Divider, IconButton } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Navbar.module.css";
 
-
 const icons = [
 	{
-		icon: <Home/>,
-		link: "/link1"
+		icon: <Home />,
+		link: "/link1",
 	},
 	{
-		icon: "icon2",
-		link: "/link2"
+		icon: <People />,
+		link: "/link2",
 	},
 	{
-		icon: "icon3",
-		link: "/link3"
-	}
-];1
+		icon: <Chat />,
+		link: "/link3",
+	},
+];
+1;
 
 const Navbar = () => {
 	return (
@@ -28,13 +31,19 @@ const Navbar = () => {
 				</a>
 			</div>
 
-			<div>
-				{icons.map((item) => (
-					<IconButton key={item.icon} icon={item.icon} onClick={() => window.location.href = item.link} />
+			<div className={styles.iconGrp}>
+				{icons.map((item, index) => (
+					<IconButton
+						key={index}
+						icon={item.icon}
+						aria-label="icon"
+						bg="transparent"
+						_hover={{ bg: "transparent" }}
+					/>
 				))}
 			</div>
 		</div>
 	);
 };
 
-export default Navbar;;
+export default Navbar;
