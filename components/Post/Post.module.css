@@ -3,7 +3,7 @@
 	flex-direction: column;
 	border-radius: 30px;
 	background: #001125;
-	padding: 20px;
+	padding: 32px;
 	gap: 10px;
 	border: 1px solid black;
 }
@@ -40,7 +40,9 @@
 	width: 100%;
 	gap: 10px;
 }
-
+.content {
+	margin-left: 60px;
+}
 .last {
 	display: flex;
 	width: 100%;

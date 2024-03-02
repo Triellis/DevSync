@@ -13,27 +13,27 @@ function page() {
 
 			<div className={styles.post}>
 				<Post
-					name={"Lee Robinson"}
-					username="Utsav19"
+					name="Lee Robinson"
+					username="leerob"
 					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
 					content="I am just excited!"
 				/>
 				<Post
-					name={"Utsav Raithatha"}
-					username="Utsav19"
-					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					name="Delba de Oliveira"
+					username="delbaoliveira"
+					profilePicUrl="https://avatars.githubusercontent.com/u/32464864?v=4"
 					content="I am just excited!"
 				/>
 				<Post
-					name={"Utsav Raithatha"}
-					username="Utsav19"
-					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					name="Evan You"
+					username="yyx990803"
+					profilePicUrl="https://avatars.githubusercontent.com/u/499550?v=4"
 					content="I am just excited!"
 				/>
 				<Post
-					name={"Utsav Raithatha"}
-					username="Utsav19"
-					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
+					name="Rich Harris"
+					username="Rich-Harris"
+					profilePicUrl="https://avatars.githubusercontent.com/u/1162160?v=4"
 					content="I am just excited!"
 				/>
 			</div>
