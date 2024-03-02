@@ -63,18 +63,17 @@ const Navbar = () => {
 			<Menu placement="bottom-end">
 				<MenuButton>{<ProfilePic />}</MenuButton>
 				<MenuList className={styles.list}>
-					<MenuItem>
-						<Button className={styles.btn}>
-							<Link
-								className={styles.second}
-								href="/Dashboard/Profile"
-							>
-								Profile
-							</Link>
-						</Button>
+					<MenuItem className={styles.item}>
+						<Link
+							className={styles.second}
+							href="/Dashboard/Profile"
+						>
+							Profile
+						</Link>
 					</MenuItem>
 
 					<MenuItem
+						className={styles.item}
 						style={{ width: "10px" }}
 						onClick={() => {
 							signOut({ callbackUrl: "/LandingPage" });
@@ -82,7 +81,6 @@ const Navbar = () => {
 					>
 						Logout
 					</MenuItem>
-					<MenuItem className={styles.item}>Logout</MenuItem>
 				</MenuList>
 			</Menu>
 		</div>
