@@ -1,5 +1,6 @@
+import Bluetick from "@/public/icons/Bluetick";
 import More from "@/public/icons/More";
-import { IconButton } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import React from "react";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import styles from "./Post.module.css";
@@ -11,8 +12,22 @@ function Post({ content }: { content: string }) {
 				<div className={styles.head}>
 					<ProfilePic sz="md" />
 					<div className={styles.names}>
-						<div>NAME</div>
-						<div>username</div>
+						<Flex
+							direction={"row"}
+							gap={"10px"}
+							fontWeight={"bold"}
+						>
+							<span>name</span>
+							<Bluetick />
+						</Flex>
+
+						<span
+							style={{
+								color: "#536471",
+							}}
+						>
+							@ username
+						</span>
 					</div>
 				</div>
 
