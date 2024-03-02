@@ -1,1 +1,8 @@
-
+:root {
+	--text: #d6e8ff;
+	--background: #000c1a;
+	--primary: #75afff;
+	--secondary: #3f009e;
+	--accent: #a22afe;
+	--radius: 20px;
+}
