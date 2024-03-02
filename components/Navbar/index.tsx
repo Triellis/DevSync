@@ -50,6 +50,7 @@ const Navbar = () => {
 							aria-label="icon"
 							bg="transparent"
 							_hover={{ bg: "transparent" }}
+							onClick={() => {}}
 						/>
 					))}
 				</div>
