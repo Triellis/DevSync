@@ -13,12 +13,12 @@ import {
 	MenuItem,
 	MenuList,
 } from "@chakra-ui/react";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
-import { signOut } from "next-auth/react";
 
 const icons = [
 	{
@@ -82,6 +82,7 @@ const Navbar = () => {
 					>
 						Logout
 					</MenuItem>
+					<MenuItem className={styles.item}>Logout</MenuItem>
 				</MenuList>
 			</Menu>
 		</div>

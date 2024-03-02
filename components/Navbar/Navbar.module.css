@@ -32,7 +32,7 @@
 
 .iconGrp {
 	display: flex;
-	justify-content: space-between;
+	j1ustify-content: space-between;
 	align-items: center;
 	padding-inline: 15px;
 	gap: 10px;
@@ -50,8 +50,7 @@
 	padding: 0 !important;
 }
 
-.btn {
-	width: 100%;
-	background-color: hsl(var(--background)) !important;
-	color: white !important;
+.item {
+	padding-inline: 10px !important;
+	padding-block: 5px !important;
 }
