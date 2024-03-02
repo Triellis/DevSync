@@ -5,10 +5,11 @@ import styles from "./Communities.module.css";
 function Communities() {
 	return (
 		<div className={styles.main}>
-			<CommunityCard desc={"hihihhihi"} />
-			<CommunityCard desc={"hihihhihi"} />
-			<CommunityCard desc={"hihihhihi"} />
-			<CommunityCard desc={"hihihhihi"} />
+			<CommunityCard pic={""} desc={"hihihhihi"} />
+			<CommunityCard pic={""} desc={"hihihhihi"} />
+			<CommunityCard pic={""} desc={"hihihhihi"} />
+			<CommunityCard pic={""} desc={"hihihhihi"} />
+			<CommunityCard pic={""} desc={"hihihhihi"} />
 		</div>
 	);
 }
