@@ -10,25 +10,24 @@ import styles from "./Navbar.module.css";
 const icons = [
 	{
 		icon: <Home />,
-		link: "/link1",
+		link: "/Dashboard",
 	},
 	{
 		icon: <People />,
-		link: "/link2",
+		link: "/Dashboard/Communities",
 	},
 	{
 		icon: <Chat />,
-		link: "/link3",
+		link: "/Dashboard/Chat",
 	},
 ];
-1;
 
 const Navbar = () => {
 	return (
 		<div className={styles.main}>
 			<div className={styles.first}>
 				<div className={styles.navLogo}>
-					<a href="/home">
+					<a href="/Dashboard">
 						<Logo fSize="18px" />
 					</a>
 				</div>
