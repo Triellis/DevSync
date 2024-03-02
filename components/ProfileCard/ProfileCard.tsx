@@ -32,7 +32,8 @@ function ProfileCard() {
 	return (
 		<div className={styles.main}>
 			<Avatar
-				size={"2xl"}
+				height={"200px"}
+				width={"200px"}
 				name="name"
 				borderColor={"hsl(var(--primary))"}
 				borderWidth={"2px"}
