@@ -2,7 +2,7 @@ import Logo from "@/components/Logo";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
-import { Center, Divider, IconButton } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Navbar.module.css";
 
