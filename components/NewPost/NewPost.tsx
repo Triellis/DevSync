@@ -22,7 +22,7 @@ function Post() {
 					bg={"transparent"}
 					_hover={{ bg: "transparent" }}
 				/>
-				<Button className={styles.postBtn} colorScheme="blue" size="sm">
+				<Button className={styles.postBtn} size="sm">
 					Post
 				</Button>
 			</div>
