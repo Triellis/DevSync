@@ -5,10 +5,18 @@
 	background-color: #001125;
 	border-radius: 32px;
 	width: min-content;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .navLogo {
-	/* white border on the right side */
-	border-right: 2px solid white;
 	padding-inline: 10px;
+}
+
+.iconGrp {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
