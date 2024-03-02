@@ -1,18 +1,19 @@
 import { authConfig } from "@/lib/Auth/auth";
 import { getServerSession } from "next-auth";
-import LoginBtn from "@/components/LoginBtn/LoginBtn";
-import Auth from "@/components/Temp/Auth/Auth";
+import LoginBtn from "@/components/LoginBtn";
+import Logo from "../../components/Logo";
 import SignoutBtn from "@/components/Temp/SignoutBtn";
-import styles from "./styles/page.module.css";
+import styles from "./LandingPage.module.css";
 
 export default async function Home() {
 	const session = await getServerSession(authConfig);
 
 	return (
 		<div className={styles.main}>
+			<Logo fSize="84px" />
+
 			<h1 className={styles.title}>Sync In. Stand Out.</h1>
 			{!session ? (
-				// <Auth />
 				<LoginBtn />
 			) : (
 				<div>

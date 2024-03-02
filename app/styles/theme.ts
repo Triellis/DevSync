@@ -1,9 +1,14 @@
-import { theme as chakraTheme } from "@chakra-ui/react";
+import { theme as chakraTheme, extendTheme } from "@chakra-ui/react";
 
-export const theme = {
+export const theme = extendTheme({
 	styles: {
-		global: {},
+		global: {
+			body: {
+				bg: "var(--background)",
+				color: "var(--text)",
+			},
+		},
 	},
 	components: {},
 	fonts: {},
-};
+});
