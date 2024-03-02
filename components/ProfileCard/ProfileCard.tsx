@@ -9,23 +9,35 @@ import { Avatar } from "@chakra-ui/react";
 import React from "react";
 import styles from "./ProfileCard.module.css";
 import { useSession } from "next-auth/react";
+import { useCookies } from 'next-client-cookies';
+import { useEffect, useState } from "react";
 
 function ProfileCard() {
 	const session = useSession().data;
+	const cookies = useCookies();
+	const username = cookies?.get('username');
+
+	const [stats, setStats] = useState({
+		stars: 0,
+		commits: 0,
+		prs: 0,
+		issues: 0,
+		repos: 0,
+	});
 
 	const statistics = [
-		{ icon: <Star />, title: "Total Stars", number: 10 },
-		{ icon: <Commits />, title: "Total Commits", number: 20 },
-		{ icon: <PR />, title: "Total PRs", number: 5 },
-		{ icon: <Issue />, title: "Total Issues", number: 3 },
-		{ icon: <Repo />, title: "Number of Repos", number: 7 },
+		{ icon: <Star />, title: "Total Stars", number: stats.stars },
+		{ icon: <Commits />, title: "Total Commits", number: stats.commits },
+		{ icon: <PR />, title: "Total PRs", number: stats.prs },
+		{ icon: <Issue />, title: "Total Issues", number: stats.issues },
+		{ icon: <Repo />, title: "Number of Repos", number: stats.repos },
 	];
 
 	return (
 		<div className={styles.main}>
 			<Avatar size="2xl" name="name" src={session?.user?.image || ""} />
 			<div>
-				<span className={styles.name}>Username</span>
+				<span className={styles.name}>{username}</span>
 				<div className={styles.stats}>
 					{statistics.map((stat, i) => (
 						<div key={i} className={styles.stat}>

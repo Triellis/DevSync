@@ -3,7 +3,7 @@
 import styles from "@/app/styles/page.module.css";
 import Navbar from "@/components/Navbar";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function RootLayout({
 	children,
@@ -11,11 +11,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	const session = useSession().data;
-	const router = useRouter();
 
 	if (!session) {
-		console.log(session);
-		router.push("/LandingPage");
+		redirect("/LandingPage");
 	}
 
 	return (
