@@ -16,6 +16,7 @@ import {
 import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
+import Link from "next/link";
 
 const icons = [
 	{
@@ -37,9 +38,9 @@ const Navbar = () => {
 		<div className={styles.main}>
 			<div className={styles.first}>
 				<div className={styles.navLogo}>
-					<a href="/Dashboard">
+					<Link href="/Dashboard">
 						<Logo fSize="18px" />
-					</a>
+					</Link>
 				</div>
 
 				<div className={styles.iconGrp}>
@@ -56,9 +57,9 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<a className={styles.second} href="/Dashboard/Profile">
+			<Link className={styles.second} href="/Dashboard/Profile">
 				<ProfilePic />
-			</a>
+			</Link>
 		</div>
 	);
 };
