@@ -1,31 +1,24 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
 
-export const mongoUri = process.env.MONGO_URI;
+let isConnected: boolean = false;
 
-if (!mongoUri) {
-  throw new Error(
-    "Please define the MONGO_URI environment variable inside .env"
-  );
+export const connectToDB = async () => {
+    mongoose.set("strictQuery", true);
+
+    if(!process.env.MONGO_URI) {
+        return console.log("DB URI not found");
+    }
+
+    if(isConnected) {
+        return console.log("DB is already connected");
+    }
+
+    try{
+        await mongoose.connect(process.env.MONGO_URI || '');
+        isConnected = true;
+        console.log("DB connected");
+    }
+    catch(err) {
+        console.log(err);
+    }
 }
-
-let client;
-let clientPromise: Promise<MongoClient>;
-
-if (process.env.NODE_ENV === "development") {
-  // In development mode, use a global variable so that the value
-  // is preserved across module reloads caused by HMR (Hot Module Replacement).
-  //@ts-ignore
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(mongoUri);
-    //@ts-ignore
-    global._mongoClientPromise = client.connect();
-  }
-  //@ts-ignore
-  clientPromise = global._mongoClientPromise;
-} else {
-  // In production mode, it's best to not use a global variable.
-  client = new MongoClient(mongoUri);
-  clientPromise = client.connect();
-}
-
-export { clientPromise };
