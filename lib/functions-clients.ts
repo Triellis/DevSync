@@ -22,3 +22,6 @@ export function useGHStats(username: string) {
 		mutate,
 	};
 }
+export function getRepos(username: string) {
+	return fetcher(`/api/user/getRepos?username=${username}`);
+}

@@ -1,6 +1,8 @@
 import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import { getGihubBasicInfo } from "../function-server";
+import connectToDB from "../DB";
+import User from "../Schemas/User";
 
 export const authConfig: NextAuthOptions = {
 	providers: [
@@ -12,30 +14,38 @@ export const authConfig: NextAuthOptions = {
 	callbacks: {
 		async signIn({ user }): Promise<string | boolean> {
 			try {
+				const {
+					name,
+					email,
+					image,
+					githubName,
+					githubBio,
+					githubBlog,
+				} = user as any;
+
 				const rem = user?.image?.match(/\/u\/(\d+)/);
 
 				const userId = rem ? rem[1] : "";
 
 				const githubInfo = await getGihubBasicInfo(userId);
+				// console.log(githubInfo);
 
 				if (githubInfo) {
-					const res = await fetch(
-						`${process.env.NEXT_PUBLIC_API_URL}/api/auth/user/adduser`,
-						{
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json",
-							},
-							body: JSON.stringify({
-								name: user?.name,
-								email: user?.email,
-								image: user?.image,
-								githubName: githubInfo?.githubName,
-								githubBio: githubInfo?.githubBio,
-								githubBlog: githubInfo?.githubBlog,
-							}),
-						}
-					);
+					await connectToDB();
+					console.log("object");
+
+					const user = new User({
+						name,
+						email,
+						profilePic: image,
+						githubName,
+						githubBio,
+						githubBlog,
+					});
+					await user.save();
+
+					console.log(user);
+
 					return true; // Return true to continue the sign-in process
 				} else {
 					return false; // Return false to stop the sign-in process
