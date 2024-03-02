@@ -1,12 +1,9 @@
 import connectToDB from "@/lib/DB";
-
+import { NextRequest, NextResponse } from "next/server";
 import User from "@/lib/Schemas/User";
-import { NextResponse } from "next/server";
 
-export const GET = async (req: Request, res: Response) => {
-    await connectToDB();
+export const GET = async (req: NextRequest, res: NextResponse) => {
+const {username} = req.query;
 
-    const users = await User.find({});
 
-    return NextResponse.json({ users }, { status: 200 });
 }
