@@ -16,11 +16,11 @@ export default async function RootLayout({
 	}
 
 	return (
-		<div>
+		<>
 			<div className={styles.nav}>
 				<Navbar />
 			</div>
-			<div>{children}</div>
-		</div>
+			{children}
+		</>
 	);
 }

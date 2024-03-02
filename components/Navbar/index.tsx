@@ -1,34 +1,43 @@
+"use client";
 import Logo from "@/components/Logo";
+import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
-import { Avatar, IconButton } from "@chakra-ui/react";
+import {
+	Avatar,
+	Button,
+	IconButton,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
+} from "@chakra-ui/react";
 import React from "react";
+import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
-import ProfilePic from "@/components/ProfilePic/ProfilePic";
 
 const icons = [
 	{
 		icon: <Home />,
-		link: "/link1",
+		link: "/Dashboard",
 	},
 	{
 		icon: <People />,
-		link: "/link2",
+		link: "/Dashboard/Communities",
 	},
 	{
 		icon: <Chat />,
-		link: "/link3",
+		link: "/Dashboard/Chat",
 	},
 ];
-1;
 
 const Navbar = () => {
 	return (
 		<div className={styles.main}>
 			<div className={styles.first}>
 				<div className={styles.navLogo}>
-					<a href="/home">
+					<a href="/Dashboard">
 						<Logo fSize="18px" />
 					</a>
 				</div>
@@ -46,9 +55,9 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<div className={styles.second}>
+			<a className={styles.second} href="/Dashboard/Profile">
 				<ProfilePic />
-			</div>
+			</a>
 		</div>
 	);
 };
