@@ -5,13 +5,15 @@ function parseText(text: string) {
 	const dom = new jsdom.JSDOM(text);
 	const { document } = dom.window;
 
-	const issues = document.querySelector('[data-testid="issues"]').innerHTML;
-	const prs = document.querySelector('[data-testid="prs"]').innerHTML;
-	const stars = document.querySelector('[data-testid="stars"]').innerHTML;
-	const commits = document.querySelector('[data-testid="commits"]').innerHTML;
+	const issues = document.querySelector('[data-testid="issues"]')!.innerHTML;
+	const prs = document.querySelector('[data-testid="prs"]')!.innerHTML;
+	const stars = document.querySelector('[data-testid="stars"]')!.innerHTML;
+	const commits = document.querySelector(
+		'[data-testid="commits"]'
+	)!.innerHTML;
 	const contribs = document.querySelector(
 		'[data-testid="contribs"]'
-	).innerHTML;
+	)!.innerHTML;
 
 	console.log(issues, prs, stars, commits, contribs);
 	return {
@@ -24,7 +26,7 @@ function parseText(text: string) {
 }
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-	const username = req.nextUrl.searchParams.get("username");
+	const username = req.cookies.get("username");
 	const stats = await fetch(
 		`https://github-readme-stats.vercel.app/api?username=${username}`
 	);
