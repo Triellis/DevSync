@@ -65,28 +65,16 @@ const Navbar = () => {
 				<MenuButton>{<ProfilePic />}</MenuButton>
 				<MenuList className={styles.list}>
 					<MenuItem
-						style={{
-							width: "100%",
-							backgroundColor: "hsl(var(--primary))",
-						}}
-						className={classnames(
-							styles.btn,
-							styles.second,
-							styles.item
-						)}
+						className={classnames(styles.item)}
 						onClick={() => router.push("/Dashboard/Profile")}
 					>
 						Profile
 					</MenuItem>
 
 					<MenuItem
-						className={styles.item}
+						className={classnames(styles.item, styles.logout)}
 						onClick={() => {
 							signOut({ callbackUrl: "/LandingPage" });
-						}}
-						style={{
-							width: "100%",
-							backgroundColor: "hsl(var(--primary))",
 						}}
 					>
 						Logout

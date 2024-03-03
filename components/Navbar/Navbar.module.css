@@ -54,3 +54,23 @@
 	background-color: hsl(var(--background)) !important;
 	padding: 0 !important;
 }
+.item {
+	padding: 0.8em !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scale(0.9);
+	border-radius: 0.8em;
+	width: 8em !important;
+	background-color: hsl(var(--primary), 0.2) !important;
+}
+.item:hover {
+	background-color: hsl(var(--primary), 0.8) !important;
+	color: black !important;
+}
+.logout {
+	background-color: rgb(119, 0, 0) !important;
+}
+.logout:hover {
+	background-color: rgb(157, 1, 1) !important;
+}
