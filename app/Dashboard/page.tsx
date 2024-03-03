@@ -17,14 +17,14 @@ function Page() {
 				<NewPost mutate={mutate} />
 			</div>
 			<div className={styles.post}>
-				{posts.map((post: any, i: any) => {
+				{posts && posts?.map((post: any, i: any) => {
 					return (
 						<Post
 							key={i}
-							name={"name"}
+							name={post.githubName}
 							username={post.user}
 							profilePicUrl={
-								"https://avatars.githubusercontent.com/u/9113740?v=4"
+								post.userImg
 							}
 							content={post.text}
 							verified={true}
