@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Clip from "@/public/icons/Clip";
@@ -8,8 +8,7 @@ import styles from "./NewPost.module.css";
 import { useState, useEffect } from "react";
 import { useCookies } from "next-client-cookies";
 
-function Post() {
-
+function Post({ mutate }: { mutate: any }) {
 	const [text, setText] = useState("");
 	const cookies = useCookies();
 	const username = cookies?.get("username")!;
@@ -52,7 +51,7 @@ function Post() {
 		catch(e){
 			console.log(e);
 		}
-	}
+	};
 
 
 	return (
@@ -63,7 +62,7 @@ function Post() {
 					rows={2}
 					variant="unstyled"
 					placeholder="Create new post"
-					onChange={(e)=>handleTextChange(e)}
+					onChange={(e) => handleTextChange(e)}
 					value={text}
 				/>
 			</div>

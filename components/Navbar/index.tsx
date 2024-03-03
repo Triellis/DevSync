@@ -5,6 +5,7 @@ import Bookmark from "@/public/icons/Bookmark";
 import Chat from "@/public/icons/Chat";
 import Home from "@/public/icons/Home";
 import People from "@/public/icons/People";
+import { Tooltip } from "@chakra-ui/react";
 import {
 	Avatar,
 	Button,
@@ -26,18 +27,22 @@ const icons = [
 	{
 		icon: <Home />,
 		link: "/Dashboard",
+		name: "Home",
 	},
 	{
 		icon: <People />,
 		link: "/Dashboard/Communities",
+		name: "Communities",
 	},
 	{
 		icon: <Chat />,
 		link: "/Dashboard/Chat",
+		name: "Chat",
 	},
 	{
 		icon: <Bookmark />,
 		link: "/Dashboard/Bookmark",
+		name: "Bookmark",
 	},
 ];
 
@@ -54,14 +59,18 @@ const Navbar = () => {
 
 				<div className={styles.iconGrp}>
 					{icons.map((item, index) => (
-						<IconButton
-							key={index}
-							icon={item.icon}
-							aria-label="icon"
-							bg="transparent"
-							_hover={{ bg: "transparent" }}
-							onClick={() => router.push(item.link)}
-						/>
+						<>
+							<Tooltip label={item.name}>
+								<IconButton
+									key={index}
+									icon={item.icon}
+									aria-label="icon"
+									bg="transparent"
+									_hover={{ bg: "transparent" }}
+									onClick={() => router.push(item.link)}
+								/>
+							</Tooltip>
+						</>
 					))}
 				</div>
 			</div>

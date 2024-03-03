@@ -1,9 +1,9 @@
 :root {
-	--text: 214, 100%, 92%;
-	--background: 212, 100%, 5%;
-	--primary: 215, 100%, 73%;
-	--secondary: 264, 100%, 31%;
-	--accent: 274, 99%, 58%;
+	--text: 214 100% 92%;
+	--background: 212 100% 5%;
+	--primary: 215 100% 73%;
+	--secondary: 264 100% 31%;
+	--accent: 274 99% 58%;
 }
 
 html {
@@ -12,4 +12,17 @@ html {
 
 body {
 	height: 100%;
+}
+
+/* for the scroll bar */
+::-webkit-scrollbar {
+	width: 15px;
+	border-radius: 8px; /* Add rounded corners */
+}
+::-webkit-scrollbar-track {
+	background: var(--chakra-colors-gray-800);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--chakra-colors-gray-600);
+	border-radius: 5px; /* Add rounded corners */
 }

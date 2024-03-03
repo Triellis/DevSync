@@ -21,6 +21,14 @@ export default function Home() {
 				<h1 className={styles.title}>Sync In. Stand Out.</h1>
 				<LoginBtn />
 			</div>
+
+			<div className={styles.bottomTxt}>
+				<span>Music is in sync with video.</span>
+				<span>
+					Developers are in sync with{" "}
+					<span className={styles.col}>open source</span> communities{" "}
+				</span>
+			</div>
 		</div>
 	);
 }
