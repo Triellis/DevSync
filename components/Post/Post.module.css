@@ -78,3 +78,23 @@
 	background-color: hsl(var(--background)) !important;
 	padding: 0 !important;
 }
+
+.iconInterac {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.iconInterac > * {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.commentSec {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	align-items: center;
+}
