@@ -6,7 +6,7 @@ const Button = {
 			px: "6",
 			py: "4",
 			fontSize: "sm",
-			color: "hsl(var(--text) / 0.8)",
+			color: "hsl(var(--background) / 0.8)",
 			fontWeight: "normal",
 			background: "hsl(var(--primary) )",
 			textTransform: "uppercase",

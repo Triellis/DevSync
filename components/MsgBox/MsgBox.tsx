@@ -57,7 +57,7 @@ export default function MsgBox() {
 			<Flex gap={2}>
 				<Input
 					variant={"default"}
-					placeholder={`All feedback matters! ${dots}`}
+					placeholder={`your feedback matters ${dots}`}
 					value={message}
 					name="message"
 					size={"md"}
