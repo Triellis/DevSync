@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "@/app/styles/page.module.css";
+import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
@@ -22,6 +23,7 @@ export default function RootLayout({
 				<Navbar />
 			</div>
 			{children}
+			<Footer />
 		</>
 	);
 }
