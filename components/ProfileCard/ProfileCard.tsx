@@ -26,7 +26,12 @@ function ProfileCard() {
 		{ icon: <Commits />, title: "Total Commits", number: stats.commits },
 		{ icon: <PR />, title: "Total PRs", number: stats.prs },
 		{ icon: <Issue />, title: "Total Issues", number: stats.issues },
-		{ icon: <Repo />, title: "Number of Repos", number: stats.contribs },
+		{
+			icon: <Repo />,
+			title: "Number of contributed Repos",
+			number: stats.contribs,
+		},
+		{ icon: <Repo />, title: "Number of Repos", number: 46 },
 	];
 
 	return (
