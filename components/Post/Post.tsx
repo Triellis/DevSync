@@ -6,9 +6,13 @@ import Comment from "@/public/icons/Comment";
 import Like from "@/public/icons/Like";
 import Liked from "@/public/icons/Liked";
 import More from "@/public/icons/More";
+import Send from "@/public/icons/Send";
 import {
 	Flex,
 	IconButton,
+	Input,
+	InputGroup,
+	InputRightElement,
 	Menu,
 	MenuButton,
 	MenuItem,
@@ -84,48 +88,63 @@ function Post({
 			<div className={styles.content}>{content}</div>
 
 			<div className={styles.footer}>
-				<div>
-					<IconButton
-						bg="transparent"
-						_hover={{
-							bg: "transparent",
-						}}
-						aria-label="more"
-						icon={likeFill ? <Liked /> : <Like />}
-						onClick={() => {
-							setLikeFill(!likeFill);
-							setCurrLikes(
-								likeFill ? currLikes - 1 : currLikes + 1
-							);
-						}}
-					/>
-					<span>{currLikes}</span>
+				<div className={styles.iconInterac}>
+					<div>
+						<IconButton
+							bg="transparent"
+							_hover={{
+								bg: "transparent",
+							}}
+							aria-label="more"
+							icon={likeFill ? <Liked /> : <Like />}
+							onClick={() => {
+								setLikeFill(!likeFill);
+								setCurrLikes(
+									likeFill ? currLikes - 1 : currLikes + 1
+								);
+							}}
+						/>
+						<span>{currLikes}</span>
+					</div>
+
+					<div>
+						<IconButton
+							bg="transparent"
+							_hover={{
+								bg: "transparent",
+							}}
+							aria-label="more"
+							icon={<Comment />}
+						/>
+						<span>{currComments}</span>
+					</div>
+
+					<div>
+						<IconButton
+							bg="transparent"
+							_hover={{
+								bg: "transparent",
+							}}
+							aria-label="more"
+							onClick={() => {
+								setMarked(!marked);
+							}}
+							icon={marked ? <Bookmarked /> : <Bookmark />}
+						/>
+					</div>
 				</div>
 
-				<div>
-					<IconButton
-						bg="transparent"
-						_hover={{
-							bg: "transparent",
-						}}
-						aria-label="more"
-						icon={<Comment />}
-					/>
-					<span>{currComments}</span>
-				</div>
-
-				<div>
-					<IconButton
-						bg="transparent"
-						_hover={{
-							bg: "transparent",
-						}}
-						aria-label="more"
-						onClick={() => {
-							setMarked(!marked);
-						}}
-						icon={marked ? <Bookmarked /> : <Bookmark />}
-					/>
+				<div className={styles.commentSec}>
+					<InputGroup width={"80%"}>
+						<Input
+							placeholder="Add comment"
+							borderRadius={"30px"}
+							border={"1px solid hsl(var(--primary))"}
+						/>
+						<InputRightElement>
+							<Send />
+						</InputRightElement>
+					</InputGroup>
 				</div>
 			</div>
 		</div>
