@@ -2,9 +2,9 @@
 import NewPost from "@/components/NewPost";
 import Post from "@/components/Post/Post";
 
+import { usePosts } from "@/lib/functions-clients";
 import React from "react";
 import styles from "./Dashboard.module.css";
-import { usePosts } from "@/lib/functions-clients";
 
 function Page() {
 	const { posts, isLoading, error, mutate } = usePosts();
@@ -17,7 +17,7 @@ function Page() {
 				<NewPost mutate={mutate} />
 			</div>
 			<div className={styles.post}>
-				{posts && posts?.map((post: any, i: any) => {
+				{posts?.map((post: any, i: any) => {
 					return (
 						<Post
 							key={i}

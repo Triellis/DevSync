@@ -1,0 +1,52 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	padding-inline: 100px;
+	padding-block: 20px;
+	height: 100%;
+	width: 100%;
+}
+
+.Header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.topTxt {
+	font-size: 20px;
+}
+
+.bold {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.box {
+	background-color: #001125;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 30px;
+	font-size: 20px;
+}
+
+.boxGrp {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.boxItem {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	width: 100%;
+}
+
+.bottomTxt {
+	padding-block: 20px;
+	font-size: 18px;
+	color: hsl(var(--primary));
+}
