@@ -16,4 +16,6 @@
 	align-items: center;
 	width: 100%;
 	position: sticky;
+	top: 16px;
+	z-index: 100;
 }
