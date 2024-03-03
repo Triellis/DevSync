@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import MenuBtn from "../MenuBtn";
 import styles from "./Navbar.module.css";
+import classnames from "classnames";
 
 const icons = [
 	{
@@ -63,21 +64,19 @@ const Navbar = () => {
 			<Menu placement="bottom-end">
 				<MenuButton>{<ProfilePic />}</MenuButton>
 				<MenuList className={styles.list}>
-					<MenuItem className={styles.item}>
-						<Button
-							style={{
-								width: "100%",
-								backgroundColor: "hsl(var(--primary))",
-							}}
-							className={styles.btn}
-						>
-							<Link
-								className={styles.second}
-								href="/Dashboard/Profile"
-							>
-								Profile
-							</Link>
-						</Button>
+					<MenuItem
+						style={{
+							width: "100%",
+							backgroundColor: "hsl(var(--primary))",
+						}}
+						className={classnames(
+							styles.btn,
+							styles.second,
+							styles.item
+						)}
+						onClick={() => router.push("/Dashboard/Profile")}
+					>
+						Profile
 					</MenuItem>
 
 					<MenuItem
@@ -85,18 +84,12 @@ const Navbar = () => {
 						onClick={() => {
 							signOut({ callbackUrl: "/LandingPage" });
 						}}
+						style={{
+							width: "100%",
+							backgroundColor: "hsl(var(--primary))",
+						}}
 					>
-						<Button
-							bg={"red.400"}
-							style={{
-								width: "100%",
-							}}
-							_hover={{
-								bg: "red.600",
-							}}
-						>
-							Logout
-						</Button>
+						Logout
 					</MenuItem>
 				</MenuList>
 			</Menu>

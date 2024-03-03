@@ -36,6 +36,12 @@ function page() {
 					profilePicUrl="https://avatars.githubusercontent.com/u/1162160?v=4"
 					content="I am just excited!"
 				/>
+				<Post
+					name="Linus Torvalds"
+					username="torvalds"
+					profilePicUrl="https://avatars.githubusercontent.com/u/1024025?v=4"
+					content="I am just excited!"
+				/>
 			</div>
 		</div>
 	);
