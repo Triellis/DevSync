@@ -5,9 +5,13 @@
 	display: flex;
 	border-radius: 30px;
 	flex-direction: column;
-	border: 1px solid #718096;
+	border: 3px solid #718096;
+	transition: border-radius 0.2s;
 }
-
+.main:hover {
+	border: 3px solid hsl(var(--primary));
+	border-radius: 48px;
+}
 .info {
 	display: flex;
 	flex-direction: row;
