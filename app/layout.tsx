@@ -4,8 +4,13 @@ import { Cabin } from "next/font/google";
 import { Providers } from "./providers";
 import "./styles/globals.css";
 import styles from "./styles/page.module.css";
-import { CookiesProvider } from 'next-client-cookies/server';
+import { CookiesProvider } from "next-client-cookies/server";
+import Head from "next/head";
 
+export const metadata: Metadata = {
+	title: "DevSync",
+	description: "Sync In. Stand Out. ",
+};
 const font = Cabin({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -16,12 +21,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={font.className}>
-			<CookiesProvider>
-				<Providers>
-					<div className={styles.children}>{children}</div>
-					{/* <Footer /> */}
-				</Providers>
-			</CookiesProvider>
+				<CookiesProvider>
+					<Providers>
+						<div className={styles.children}>{children}</div>
+						{/* <Footer /> */}
+					</Providers>
+				</CookiesProvider>
 			</body>
 		</html>
 	);
