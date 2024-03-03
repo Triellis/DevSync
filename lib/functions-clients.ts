@@ -59,3 +59,19 @@ export const getGithubOrganizations = async (username: string) => {
 		console.log(err);
 	}
 };
+
+function formatNumber(number: number) {
+	if (number >= 1e6) {
+	  return (number / 1e6).toFixed(1) + 'M';
+	} else if (number >= 1e3) {
+	  return (number / 1e3).toFixed(1) + 'k';
+	} else {
+	  return number.toString();
+	}
+}
+  
+function getRandomNumber(max: number) {
+	const randomDecimal = Math.random();
+	const randomNumber = Math.floor(randomDecimal * (max + 1));
+	return formatNumber(randomNumber);
+}

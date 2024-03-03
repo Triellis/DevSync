@@ -9,11 +9,12 @@ import { useState, useEffect } from "react";
 import { useCookies } from "next-client-cookies";
 
 function Post({ mutate }: { mutate: any }) {
-	const [text, setText] = useState("");
 	const cookies = useCookies();
 	const username = cookies?.get("username")!;
+	console.log(username);
 	const[name,setName] = useState('');
 	const[img, setImg] = useState('');
+	const [text, setText] = useState("");
 
 
 	const handleTextChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -25,16 +26,20 @@ function Post({ mutate }: { mutate: any }) {
 
 			const res_o = await fetch('http://localhost:3000/api/auth/user/adduser');
 			const data = await res_o.json();
-
+			console.log(data);
 			setName(data.name);
 			setImg(data.profilePic);
 
 			if(name !== '' && img !== ''){
+				console.log(name);
+				console.log(img);
+
 				const res = await fetch('http://localhost:3000/api/posts',{
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
+				
 				body: JSON.stringify({
 					text,
 					user:name,

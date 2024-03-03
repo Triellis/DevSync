@@ -7,7 +7,6 @@ export const getGihubBasicInfo = async (userId: string, userImg: string) => {
 		const data = await res.json();
 
 		cookies().set("username", data.login);
-		cookies().set("userImg", userImg);
 
 		return {
 			githubName: data.login,
