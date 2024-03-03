@@ -1,9 +1,9 @@
 :root {
-	--text: 214, 100%, 92%;
-	--background: 212, 100%, 5%;
-	--primary: 215, 100%, 73%;
-	--secondary: 264, 100%, 31%;
-	--accent: 274, 99%, 58%;
+	--text: 214 100% 92%;
+	--background: 212 100% 5%;
+	--primary: 215 100% 73%;
+	--secondary: 264 100% 31%;
+	--accent: 274 99% 58%;
 }
 
 html {
