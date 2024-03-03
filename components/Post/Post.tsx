@@ -4,7 +4,14 @@ import Comment from "@/public/icons/Comment";
 import Like from "@/public/icons/Like";
 import Liked from "@/public/icons/Liked";
 import More from "@/public/icons/More";
-import { Flex, IconButton } from "@chakra-ui/react";
+import {
+	Flex,
+	IconButton,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import styles from "./Post.module.css";
@@ -52,12 +59,22 @@ function Post({
 				</div>
 
 				<div className={styles.more}>
-					<IconButton
-						aria-label="more"
-						bg={"transparent"}
-						_hover={{ bg: "transparent" }}
-						icon={<More />}
-					/>
+					<Menu placement="left">
+						<MenuButton
+							aria-label="Options"
+							as={IconButton}
+							icon={<More />}
+							style={{
+								backgroundColor: "transparent",
+							}}
+							_hover={{
+								bg: "transparent",
+							}}
+						/>
+						<MenuList className={styles.list}>
+							<MenuItem>Report Post</MenuItem>
+						</MenuList>
+					</Menu>
 				</div>
 			</div>
 
