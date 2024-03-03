@@ -33,7 +33,7 @@ function page() {
 				<span className={styles.bold}>Notice</span>
 			</div>
 			<div className={styles.box}>
-				{rules.map((rule, index) => (
+				{rules?.map((rule, index) => (
 					<div className={styles.boxGrp} key={rule.srNumber}>
 						<div className={styles.boxItem}>
 							<div>{rule.srNumber}.</div>
