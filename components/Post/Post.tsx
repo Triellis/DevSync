@@ -55,13 +55,14 @@ function Post({
 							{verified ? <Bluetick /> : ""}
 						</Flex>
 
-						<span
+						<a
 							style={{
 								color: "#536471",
 							}}
+							href={`https://github.com/${username}`}
 						>
 							@ {username}
-						</span>
+						</a>
 					</div>
 				</div>
 

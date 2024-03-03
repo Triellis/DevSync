@@ -26,7 +26,7 @@ export function useGHStats(username: string) {
 }
 
 export function usePosts() {
-	const { data, error, isLoading, mutate } = useSWR(`/api/posts`, fetcher);
+	const { data, error, isLoading, mutate } = useSWR(`/api/Allposts`, fetcher);
 
 	return {
 		posts: data,
@@ -42,7 +42,7 @@ export function getRepos(username: string) {
 
 export function getPosts() {
 	const { data, error, isLoading, mutate } = useSWR(
-		`/api/posts`,
+		`/api/Allposts`,
 		fetcher
 	);
 
