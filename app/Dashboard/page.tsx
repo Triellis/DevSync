@@ -11,26 +11,29 @@ function Page() {
 	if (isLoading) return <div>Loading...</div>;
 	if (error) return <div>Error: {error.message}</div>;
 
+	console.log(posts);
+
 	return (
 		<div className={styles.main}>
 			<div className={styles.newPost}>
 				<NewPost mutate={mutate} />
 			</div>
 			<div className={styles.post}>
-				{posts?.map((post: any, i: any) => {
-					return (
-						<Post
-							key={i}
-							name={post.githubName}
-							username={post.user}
-							profilePicUrl={
-								post.userImg
-							}
-							content={post.text}
-							verified={true}
-						/>
-					);
-				})}
+			{Array.isArray(posts.allPosts) ? (
+  posts.allPosts.map((post: any, i: any) => (
+    <Post
+      key={i}
+      name={post.user}
+      username={post.githubName}
+      profilePicUrl={post.userImg}
+      content={post.text}
+      verified={true}
+    />
+  ))
+) : (
+  <div>No posts available.</div>
+)}
+
 
 				<Post
 					name="Lee Robinson"
