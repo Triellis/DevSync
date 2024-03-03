@@ -32,7 +32,6 @@ export const authConfig: NextAuthOptions = {
 
 				if (githubInfo) {
 					await connectToDB();
-					console.log("object");
 
 					const user = new User({
 						name,

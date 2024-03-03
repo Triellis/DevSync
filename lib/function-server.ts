@@ -17,3 +17,20 @@ export const getGihubBasicInfo = async (userId: string) => {
 		console.log(err);
 	}
 };
+
+export const getGithubContributions = async (username: string) => {
+	try {
+		const res = await fetch(
+			`https://api.github.com/users/${username}/events`
+		);
+
+		const data = await res.json();
+
+		const prs = data.filter((event: any) => {
+			return event.type === "PullRequestEvent";
+		});
+
+	} catch (err) {
+		console.log(err);
+	}
+}
