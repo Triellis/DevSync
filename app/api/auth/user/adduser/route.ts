@@ -18,7 +18,7 @@ export const POST = async (req: Request, res: Response) => {
         return NextResponse.json({ message: "User already exists" }, { status: 200 });
     }
 
-    const user = await User.create({
+    const user = new User ({
         name,
         email,
         profilePic: image,
@@ -26,6 +26,9 @@ export const POST = async (req: Request, res: Response) => {
         githubBio,
         githubBlog,
     });
+
+    await user.save();
+    console.log(user);
 
     return NextResponse.json({ message: "User created", user }, { status: 201 });
     }

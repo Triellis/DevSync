@@ -25,3 +25,23 @@ export function useGHStats(username: string) {
 export function getRepos(username: string) {
 	return fetcher(`/api/user/getRepos?username=${username}`);
 }
+
+export const getGithubOrganizations = async (username: string) => {
+	try {
+
+		const res = await fetch(
+			`https://api.github.com/users/${username}/events`
+		);
+
+		const data = await res.json();
+
+		const prs = data.filter((event: any) => {
+			return event.type === "PullRequestEvent";
+		}).map((event: any) => event.repo.id);
+
+		console.log(prs);
+
+	} catch (err) {
+		console.log(err);
+	}
+}

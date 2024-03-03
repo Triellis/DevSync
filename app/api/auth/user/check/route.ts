@@ -1,12 +1,22 @@
-import connectToDB from "@/lib/DB";
-
-import User from "@/lib/Schemas/User";
 import { NextResponse } from "next/server";
 
 export const GET = async (req: Request, res: Response) => {
-    await connectToDB();
+	try {
 
-    const users = await User.find({});
+		const res = await fetch(
+			`https://api.github.com/users/JeelRajodiya/events`
+		);
 
-    return NextResponse.json({ users }, { status: 200 });
+		const data = await res.json();
+
+		const prs = data.filter((event: any) => {
+			return event.type === "PullRequestEvent";
+		}).map((event: any) => event.repo.name);
+
+        console.log(prs);
+
+        return NextResponse.json({ status: 200 });
+	} catch (err) {
+		console.log(err);
+	}
 }
