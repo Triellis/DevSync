@@ -40,20 +40,6 @@ export function getRepos(username: string) {
 	return fetcher(`/api/user/getRepos?username=${username}`);
 }
 
-export function getPosts() {
-	const { data, error, isLoading, mutate } = useSWR(
-		`/api/Allposts`,
-		fetcher
-	);
-
-	return {
-		stats: data as RepositoryStats,
-		isLoading,
-		error: error,
-		mutate,
-	};
-}
-
 export const getGithubOrganizations = async (username: string) => {
 	try {
 		const res = await fetch(
