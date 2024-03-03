@@ -15,49 +15,43 @@ function Post({ mutate }: { mutate: any }) {
 	const[name,setName] = useState('');
 	const[img, setImg] = useState('');
 	const [text, setText] = useState("");
+	const [name, setName] = useState("");
+	const [img, setImg] = useState("");
 
-
-	const handleTextChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+	const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		setText(e.target.value);
-	}
+	};
 
-	const handlePost = async () =>{
-		try{
-
-			const res_o = await fetch('http://localhost:3000/api/auth/user/adduser');
+	const handlePost = async () => {
+		try {
+			const res_o = await fetch("/api/auth/user/adduser");
 			const data = await res_o.json();
 			console.log(data);
 			setName(data.name);
 			setImg(data.profilePic);
 
-			if(name !== '' && img !== ''){
-				console.log(name);
-				console.log(img);
+			if (name !== "" && img !== "") {
+				const res = await fetch("/api/posts", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						text,
+						user: name,
+						githubName: username,
+						profilePic: img,
+					}),
+				});
 
-				const res = await fetch('http://localhost:3000/api/posts',{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				
-				body: JSON.stringify({
-					text,
-					user:name,
-					githubName: username,
-					profilePic: img
-				})
-			})
-
-			const data = await res.json();
-			console.log(data);
-			setText('');
+				const data = await res.json();
+				console.log(data);
+				setText("");
 			}
-		}
-		catch(e){
+		} catch (e) {
 			console.log(e);
 		}
 	};
-
 
 	return (
 		<div className={styles.main}>
@@ -84,7 +78,11 @@ function Post({ mutate }: { mutate: any }) {
 					bg={"transparent"}
 					_hover={{ bg: "transparent" }}
 				/>
-				<Button className={styles.postBtn} size="sm" onClick={handlePost}>
+				<Button
+					className={styles.postBtn}
+					size="sm"
+					onClick={handlePost}
+				>
 					Post
 				</Button>
 			</div>

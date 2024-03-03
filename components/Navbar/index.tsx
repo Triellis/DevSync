@@ -59,18 +59,15 @@ const Navbar = () => {
 
 				<div className={styles.iconGrp}>
 					{icons.map((item, index) => (
-						<>
-							<Tooltip label={item.name}>
-								<IconButton
-									key={index}
-									icon={item.icon}
-									aria-label="icon"
-									bg="transparent"
-									_hover={{ bg: "transparent" }}
-									onClick={() => router.push(item.link)}
-								/>
-							</Tooltip>
-						</>
+						<Tooltip label={item.name} key={index}>
+							<IconButton
+								icon={item.icon}
+								aria-label="icon"
+								bg="transparent"
+								_hover={{ bg: "transparent" }}
+								onClick={() => router.push(item.link)}
+							/>
+						</Tooltip>
 					))}
 				</div>
 			</div>

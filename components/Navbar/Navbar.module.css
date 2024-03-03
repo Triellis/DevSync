@@ -62,11 +62,11 @@
 	transform: scale(0.9);
 	border-radius: 0.8em;
 	width: 8em !important;
-	background-color: hsl(var(--primary), 0.2) !important;
+	background-color: hsl(var(--primary) / 0.1) !important;
 }
 .item:hover {
-	background-color: hsl(var(--primary), 0.8) !important;
-	color: black !important;
+	background-color: hsl(var(--primary) / 0.8) !important;
+	color: hsl(var(--text), 0.8) !important;
 }
 .logout {
 	background-color: rgb(119, 0, 0) !important;
