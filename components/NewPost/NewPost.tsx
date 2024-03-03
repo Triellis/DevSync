@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import ProfilePic from "@/components/ProfilePic/ProfilePic";
 import Clip from "@/public/icons/Clip";
@@ -8,13 +8,14 @@ import styles from "./NewPost.module.css";
 import { useState, useEffect } from "react";
 import { useCookies } from "next-client-cookies";
 
-function Post() {
-
+function Post({ mutate }: { mutate: any }) {
 	const [text, setText] = useState("");
 	const cookies = useCookies();
 	const username = cookies?.get("username")!;
 
-	const handlePost = async(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+	const handlePost = async (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
 		e.preventDefault();
 		try {
 			const res = await fetch("/api/posts", {
@@ -28,16 +29,16 @@ function Post() {
 				}),
 			});
 
-			setText("");	
-		}
-		catch (err) {
+			setText("");
+			mutate();
+		} catch (err) {
 			console.log(err);
 		}
-	}
+	};
 
-	const handleTextChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+	const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		setText(e.target.value);
-	}
+	};
 
 	return (
 		<div className={styles.main}>
@@ -47,7 +48,7 @@ function Post() {
 					rows={2}
 					variant="unstyled"
 					placeholder="Create new post"
-					onChange={(e)=>handleTextChange(e)}
+					onChange={(e) => handleTextChange(e)}
 					value={text}
 				/>
 			</div>
@@ -64,7 +65,11 @@ function Post() {
 					bg={"transparent"}
 					_hover={{ bg: "transparent" }}
 				/>
-				<Button className={styles.postBtn} size="sm" onClick={(e)=>handlePost(e)}>
+				<Button
+					className={styles.postBtn}
+					size="sm"
+					onClick={(e) => handlePost(e)}
+				>
 					Post
 				</Button>
 			</div>

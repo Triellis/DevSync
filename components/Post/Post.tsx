@@ -24,7 +24,7 @@ function Post({
 }) {
 	const [likeFill, setLikeFill] = useState(false);
 	const [currLikes, setCurrLikes] = useState(12);
-	const [currComments, setCurrComments] = useState(69);
+	const [currComments, setCurrComments] = useState(39);
 
 	return (
 		<div className={styles.main}>
