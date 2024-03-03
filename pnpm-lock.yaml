@@ -17,6 +17,9 @@ dependencies:
   '@supabase/supabase-js':
     specifier: ^2.39.7
     version: 2.39.7
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   cookies-next:
     specifier: ^4.1.1
     version: 4.1.1
@@ -55,6 +58,9 @@ dependencies:
     version: 2.2.5(react@18.2.0)
 
 devDependencies:
+  '@types/classnames':
+    specifier: ^2.3.1
+    version: 2.3.1
   '@types/jsdom':
     specifier: ^21.1.6
     version: 21.1.6
@@ -1815,6 +1821,13 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /@types/classnames@2.3.1:
+    resolution: {integrity: sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==}
+    deprecated: This is a stub types definition. classnames provides its own type definitions, so you do not need this installed.
+    dependencies:
+      classnames: 2.5.1
+    dev: true
+
   /@types/cookie@0.6.0:
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: false
@@ -2259,6 +2272,9 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
   /client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}

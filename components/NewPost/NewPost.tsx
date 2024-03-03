@@ -25,12 +25,10 @@ function Post() {
 				body: JSON.stringify({
 					username,
 					text,
-					tags: ''
 				}),
 			});
 
-			const data = await res.json();
-			console.log(data);
+			setText("");	
 		}
 		catch (err) {
 			console.log(err);
@@ -50,6 +48,7 @@ function Post() {
 					variant="unstyled"
 					placeholder="Create new post"
 					onChange={(e)=>handleTextChange(e)}
+					value={text}
 				/>
 			</div>
 

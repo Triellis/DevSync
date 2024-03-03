@@ -3,8 +3,7 @@
 import styles from "@/app/styles/page.module.css";
 import Navbar from "@/components/Navbar";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 export default function RootLayout({
 	children,

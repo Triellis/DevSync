@@ -4,13 +4,14 @@ import connectToDB from "@/lib/DB";
 
 export const POST = async(req: Request, res: Response) => {
     try{
-        const { username, text, tags } = await req.json();
+        const { username, text} = await req.json();
         await connectToDB();
+
+        console.log(username, text);
 
         const post = await Posts.create({
             user: username,
             text,
-            tags,
         });
        
         return NextResponse.json({ message: "Post created", post }, { status: 201 });
