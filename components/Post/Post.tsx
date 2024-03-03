@@ -14,11 +14,13 @@ function Post({
 	name,
 	username,
 	content,
+	verified,
 }: {
 	profilePicUrl: string;
 	name: string;
 	username: string;
 	content: string;
+	verified: boolean;
 }) {
 	const [likeFill, setLikeFill] = useState(false);
 	const [currLikes, setCurrLikes] = useState(12);
@@ -36,7 +38,7 @@ function Post({
 							fontWeight={"bold"}
 						>
 							<span>{name}</span>
-							<Bluetick />
+							{verified ? <Bluetick /> : ""}
 						</Flex>
 
 						<span

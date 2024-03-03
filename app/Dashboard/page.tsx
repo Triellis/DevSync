@@ -17,30 +17,35 @@ function page() {
 					username="leerob"
 					profilePicUrl="https://avatars.githubusercontent.com/u/9113740?v=4"
 					content="I am just excited!"
+					verified={true}
 				/>
 				<Post
 					name="Delba de Oliveira"
 					username="delbaoliveira"
 					profilePicUrl="https://avatars.githubusercontent.com/u/32464864?v=4"
 					content="I am just excited!"
+					verified={false}
 				/>
 				<Post
 					name="Evan You"
 					username="yyx990803"
 					profilePicUrl="https://avatars.githubusercontent.com/u/499550?v=4"
 					content="I am just excited!"
+					verified={true}
 				/>
 				<Post
 					name="Rich Harris"
 					username="Rich-Harris"
 					profilePicUrl="https://avatars.githubusercontent.com/u/1162160?v=4"
 					content="I am just excited!"
+					verified={true}
 				/>
 				<Post
 					name="Linus Torvalds"
 					username="torvalds"
 					profilePicUrl="https://avatars.githubusercontent.com/u/1024025?v=4"
 					content="I am just excited!"
+					verified={false}
 				/>
 			</div>
 		</div>
