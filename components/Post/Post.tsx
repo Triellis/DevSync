@@ -37,7 +37,7 @@ function Post({
 }) {
 	const [likeFill, setLikeFill] = useState(false);
 	const [currLikes, setCurrLikes] = useState(12);
-	const [currComments, setCurrComments] = useState(69);
+	const [currComments, setCurrComments] = useState(70);
 	const [marked, setMarked] = useState(false);
 
 	return (
