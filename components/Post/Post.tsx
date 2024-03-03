@@ -135,11 +135,16 @@ function Post({
 				</div>
 
 				<div className={styles.commentSec}>
-					<InputGroup width={"80%"}>
+					<InputGroup
+						width={{
+							md: "50%",
+							xs: "100%",
+						}}
+					>
 						<Input
 							placeholder="Add comment"
 							borderRadius={"30px"}
-							border={"1px solid hsl(var(--primary))"}
+							border={"1px solid hsl(var(--primary) / 0.5)"}
 						/>
 						<InputRightElement>
 							<Send />
