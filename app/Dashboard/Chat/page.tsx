@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./chat.module.css";
+import styles from "./Chat.module.css";
 
 function page() {
 	return <div className={styles.chat}>Chat here !</div>;
