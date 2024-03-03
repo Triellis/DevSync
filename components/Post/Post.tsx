@@ -1,5 +1,7 @@
 "use client";
 import Bluetick from "@/public/icons/Bluetick";
+import Bookmark from "@/public/icons/Bookmark";
+import Bookmarked from "@/public/icons/Bookmarked";
 import Comment from "@/public/icons/Comment";
 import Like from "@/public/icons/Like";
 import Liked from "@/public/icons/Liked";
@@ -32,6 +34,7 @@ function Post({
 	const [likeFill, setLikeFill] = useState(false);
 	const [currLikes, setCurrLikes] = useState(12);
 	const [currComments, setCurrComments] = useState(69);
+	const [marked, setMarked] = useState(false);
 
 	return (
 		<div className={styles.main}>
@@ -109,6 +112,20 @@ function Post({
 						icon={<Comment />}
 					/>
 					<span>{currComments}</span>
+				</div>
+
+				<div>
+					<IconButton
+						bg="transparent"
+						_hover={{
+							bg: "transparent",
+						}}
+						aria-label="more"
+						onClick={() => {
+							setMarked(!marked);
+						}}
+						icon={marked ? <Bookmarked /> : <Bookmark />}
+					/>
 				</div>
 			</div>
 		</div>
