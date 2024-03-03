@@ -27,10 +27,10 @@ export const authConfig: NextAuthOptions = {
 
 				const userId = rem ? rem[1] : "";
 
-				const githubInfo = await getGihubBasicInfo(userId);
-				// console.log(githubInfo);
+				const githubInfo = await getGihubBasicInfo(userId, user?.image || "");
+				console.log(githubInfo?.githubBio || "No bio");
 
-				if (githubInfo) {
+				if (githubInfo?.githubBio && githubInfo?.githubName && githubInfo?.githubBlog){
 					await connectToDB();
 
 					const userExists = await User.findOne({ email });
@@ -43,16 +43,19 @@ export const authConfig: NextAuthOptions = {
 						name,
 						email,
 						profilePic: image,
-						githubName,
-						githubBio,
-						githubBlog,
+						githubName: githubInfo?.githubName,
+						githubBio: githubInfo?.githubBio,
+						githubBlog: githubInfo?.githubBlog,
 					});
+
 					await user.save();
 
 					console.log(user);
 
 					return true; // Return true to continue the sign-in process
-				} else {
+				}
+				else {
+					console.error("Error getting user info from Github");
 					return false; // Return false to stop the sign-in process
 				}
 			} catch (error) {

@@ -1,10 +1,13 @@
+'use client';
+
+import React, { useEffect, useState } from "react";
+import styles from "./Dashboard.module.css";
 import NewPost from "@/components/NewPost";
 import Post from "@/components/Post/Post";
 
-import React from "react";
-import styles from "./Dashboard.module.css";
 
 function page() {
+
 	return (
 		<div className={styles.main}>
 			<div className={styles.newPost}>

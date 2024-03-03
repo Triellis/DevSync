@@ -1,6 +1,7 @@
 import connectToDB from "@/lib/DB";
 import User from "@/lib/Schemas/User";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+
 
 export const POST = async (req: Request, res: Response) => {
     try {
@@ -34,5 +35,32 @@ export const POST = async (req: Request, res: Response) => {
     }
     catch(err) {
         return NextResponse.json({ message: "Error creating user", err }, { status: 500 });
+    }
+}
+
+export const GET = async (req: NextRequest, res: NextResponse) => {
+    try {
+        await connectToDB();
+        const githubName = (req.cookies?.get('username'))?.value;
+        console.log("ok: ",githubName);
+
+        const getUser = await User.findOne({ githubName });
+
+        if(!getUser) {
+            return NextResponse.json({ message: "User not found" }, { status: 404 });
+        }
+        console.log(getUser);
+
+        const data = {
+            name: getUser.name,
+            profilePic: getUser.profilePic,
+        }
+
+        console.log(data);
+
+        return NextResponse.json( data , { status: 200 });
+    }
+    catch(err) {
+        return NextResponse.json({ message: "Error getting users", err }, { status: 500 });
     }
 }

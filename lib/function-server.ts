@@ -1,12 +1,13 @@
 "use server";
 import { cookies } from "next/headers";
 
-export const getGihubBasicInfo = async (userId: string) => {
+export const getGihubBasicInfo = async (userId: string, userImg: string) => {
 	try {
 		const res = await fetch(`https://api.github.com/user/${userId}`);
 		const data = await res.json();
 
 		cookies().set("username", data.login);
+		cookies().set("userImg", userImg);
 
 		return {
 			githubName: data.login,

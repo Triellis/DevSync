@@ -17,6 +17,14 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    githubName: {
+        type: String,
+        required: false,
+    },
+    userImg: {
+        type: String,
+        required: false,
+    },
     postedAt: {
         type: Date,
         default: Date.now,

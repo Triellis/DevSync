@@ -13,31 +13,47 @@ function Post() {
 	const [text, setText] = useState("");
 	const cookies = useCookies();
 	const username = cookies?.get("username")!;
+	const[name,setName] = useState('');
+	const[img, setImg] = useState('');
 
-	const handlePost = async(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-		e.preventDefault();
-		try {
-			const res = await fetch("/api/posts", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					username,
-					text,
-				}),
-			});
-
-			setText("");	
-		}
-		catch (err) {
-			console.log(err);
-		}
-	}
 
 	const handleTextChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
 		setText(e.target.value);
 	}
+
+	const handlePost = async () =>{
+		try{
+
+			const res_o = await fetch('http://localhost:3000/api/auth/user/adduser');
+			const data = await res_o.json();
+
+			setName(data.name);
+			setImg(data.profilePic);
+
+			if(name !== '' && img !== ''){
+				const res = await fetch('http://localhost:3000/api/posts',{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					text,
+					user:name,
+					githubName: username,
+					profilePic: img
+				})
+			})
+
+			const data = await res.json();
+			console.log(data);
+			setText('');
+			}
+		}
+		catch(e){
+			console.log(e);
+		}
+	}
+
 
 	return (
 		<div className={styles.main}>
@@ -64,7 +80,7 @@ function Post() {
 					bg={"transparent"}
 					_hover={{ bg: "transparent" }}
 				/>
-				<Button className={styles.postBtn} size="sm" onClick={(e)=>handlePost(e)}>
+				<Button className={styles.postBtn} size="sm" onClick={handlePost}>
 					Post
 				</Button>
 			</div>
